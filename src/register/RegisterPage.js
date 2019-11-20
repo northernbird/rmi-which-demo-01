@@ -4,9 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import React from "react";
 import ProfileImageUpload from './components/ProfileImageUpload'
 import GenderRadioButton from './components/GenderRadioButton'
-import { Select } from '@material-ui/core';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
+import BirthdayYearSelectBox from './components/BirthDayYearSelectBox'
 
 const useStyles = makeStyles({
     pannel: {
@@ -52,31 +50,6 @@ const useStyles = makeStyles({
         maxWidth: '75%',
         display:'inline-block',
     },
-    selectBoxGroup: {
-        width: '75%',
-        maxWidth: '75%',
-        display:'inline-block',
-    },
-    selectBox: {
-        display:'inline-block',
-        fontSize: '14px',
-        width: '100px'
-    },
-    menuItem: {
-        fontSize: '14px',
-    },
-    selectInput: {
-        display:'flex',
-    },
-    selectInputLabel: {
-        width: '75%',
-        maxWidth: '75%',
-        display:'inline-block',
-        marginTop: '25px',
-        alignContent: 'left',
-        alignItems: 'left',
-        verticalAlign:'10px',
-    },
 });
 
 function WelcomePage() {
@@ -98,21 +71,7 @@ function WelcomePage() {
             <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                 <p className={classes.inputLabelP}>生年月日【必須】</p>
             </Box>
-            <Box className={classes.selectBoxGroup}>
-                <Select className={classes.selectBox}>
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={1995}>1995</MenuItem>
-                    <MenuItem value={1996}>1996</MenuItem>
-                    <MenuItem value={1997}>1997</MenuItem>
-                </Select>
-                <Box fontSize={12} fontWeight={700} className={classes.selectInputLabel} marginLeft={2}>
-                    <p className={classes.selectInput}>年</p>
-                </Box>
-            </Box>
-
-
+            <BirthdayYearSelectBox/>
         </Typography>
     );
 }
