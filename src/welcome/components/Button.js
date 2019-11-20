@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from "@material-ui/core/Box";
@@ -21,13 +22,18 @@ const useStyles = makeStyles({
     },
 });
 
-function WelcomeButton() {
+function WelcomeButton(props) {
+    const { onClick } = props
     const classes = useStyles();
     return (
-        <Button className={classes.button}>
+        <Button className={classes.button} onClick={onClick}>
             はじめる
         </Button>
     );
+}
+
+WelcomeButton.propTypes = {
+    onClick: PropTypes.func.isRequired,
 }
 
 export default WelcomeButton;
