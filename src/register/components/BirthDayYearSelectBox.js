@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 });
 
 function BirthdayYearSelectBox(props) {
-    const {label} = props
+    const {label, dataList} = props
     const classes = useStyles()
     return (
             <Box className={classes.selectBoxGroup}>
@@ -37,9 +37,9 @@ function BirthdayYearSelectBox(props) {
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={1995}>1995</MenuItem>
-                    <MenuItem value={1996}>1996</MenuItem>
-                    <MenuItem value={1997}>1997</MenuItem>
+                    {dataList.map((data) =>
+                        <MenuItem value={data}>{data}</MenuItem>
+                    )}
                 </Select>
                 <Box fontSize={12} fontWeight={700} className={classes.selectInputLabel} marginLeft={2}>
                     <p className={classes.selectInput}>{label}</p>

@@ -76,6 +76,9 @@ const useStyles = makeStyles({
     }
 });
 
+const birthDayYear = [1996,1997,1998]
+const birthDayMonth = [1,2,3,4,5,6,7,8,9,10,11,12]
+
 function WelcomePage() {
     const classes = useStyles()
     return (
@@ -97,9 +100,8 @@ function WelcomePage() {
             </Box>
             <Box className={classes.birthdaySelectBox}>
                 <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
-                    <BirthdayYearSelectBox label={'年'}/>
-                    <BirthdayYearSelectBox label={'月'}/>
-                    <BirthdayYearSelectBox label={'日'}/>
+                    <BirthdayYearSelectBox label={'年'} dataList={birthDayYear}/>
+                    <BirthdayYearSelectBox label={'月'} dataList={birthDayMonth}/>
                 </Box>
             </Box>
             <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
