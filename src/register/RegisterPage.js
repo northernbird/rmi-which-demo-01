@@ -65,14 +65,16 @@ const useStyles = makeStyles({
     inputText: {
         width: '75%',
         maxWidth: '75%',
-        textAlign: 'center',
+        textAlign: 'left',
+        paddingLeft: '10px',
         borderBottom: 'solid 1px #7d7d7d',
         borderLeft: 'solid 1px #7d7d7d',
         borderRadius: '4px',
         borderRight: 'solid 1px #7d7d7d',
         borderTop: 'solid 1px #7d7d7d',
         boxShadow: '0 2px 5px rgba(0,0,0,0.2) inset',
-        height: '40px'
+        height: '40px',
+        fontSize: '14px'
     }
 });
 
@@ -108,19 +110,19 @@ function WelcomePage() {
                 <p className={classes.inputLabelP}>ニックネーム【必須】※変更可能</p>
             </Box>
             <Box>
-                <input type="text" placeholder="First name" name="First name" className={classes.inputText}/>
+                <input type="text" placeholder="ニックネーム" name="nickName" className={classes.inputText}/>
             </Box>
             <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                 <p className={classes.inputLabelP}>郵便番号【必須】※地域のオススメが表示されます</p>
             </Box>
             <Box>
-                <input type="text" placeholder="First name" name="First name" className={classes.inputText}/>
+                <input type="text" placeholder="1501234" name="postCode" className={classes.inputText}/>
             </Box>
             <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                 <p className={classes.inputLabelP}>職業【任意】</p>
             </Box>
             <Box>
-                <input type="text" placeholder="First name" name="First name" className={classes.inputText}/>
+                <input type="text" placeholder="アパレル店員・大学生" name="job" className={classes.inputText}/>
             </Box>
             <Box>
                 <RegisterButton label={'登録する'} />

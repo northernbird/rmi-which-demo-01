@@ -6,8 +6,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles({
     selectBoxGroup: {
-        width: '30%',
-        maxWidth: '30%',
+        width: '25%',
+        maxWidth: '25%',
         display:'inline-block',
         height: '40px',
         marginRight: '10px'
