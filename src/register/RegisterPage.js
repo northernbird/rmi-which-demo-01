@@ -48,7 +48,6 @@ const useStyles = makeStyles({
         width: '75%',
         maxWidth: '75%',
         display:'inline-block',
-        marginTop: '15px',
     }
 });
 
