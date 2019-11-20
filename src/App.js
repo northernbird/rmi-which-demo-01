@@ -11,6 +11,7 @@ const theme = createMuiTheme({
         color: '#333',
         caption: {
             fontWeight: 700,
+            color: '#333'
         },
     },
 });
