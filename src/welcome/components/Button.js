@@ -23,11 +23,11 @@ const useStyles = makeStyles({
 });
 
 function WelcomeButton(props) {
-    const { onClick } = props
+    const { onClick, label } = props
     const classes = useStyles();
     return (
         <Button className={classes.button} onClick={onClick}>
-            はじめる
+            {label}
         </Button>
     );
 }

@@ -42,6 +42,9 @@ const useStyles = makeStyles({
     },
     inputLabelP: {
         display:'flex',
+    },
+    genderButtonGroup: {
+        display:'flex',
     }
 });
 
@@ -55,6 +58,9 @@ function WelcomePage() {
             <ProfileImageUpload/>
             <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                 <p className={classes.inputLabelP}>性別【必須】</p>
+            </Box>
+            <Box>
+
             </Box>
         </Typography>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './components/Button';
+import WelcomeButton from './components/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -50,7 +50,7 @@ function WelcomePage(props) {
             <Box letterSpacing={'0.1em'} fontSize={14} className={classes.subTitle}>
                 - みんなに意見を聞いてみよう -
             </Box>
-            <Button onClick={routeChange}/>
+            <WelcomeButton onClick={routeChange} label={'はじめる'}/>
         </Typography>
     );
 }
