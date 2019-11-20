@@ -60,7 +60,7 @@ const useStyles = makeStyles({
     birthdaySelectGroup: {
         width: '75%',
         maxWidth: '75%',
-        textAlign: 'center'
+        textAlign: 'left'
     },
     inputText: {
         width: '75%',
