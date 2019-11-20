@@ -11,6 +11,7 @@ const useStyles = makeStyles({
         background: '#ffffff',
         width: '100%',
         maxWidth: '100%',
+        height: '100%',
         textAlign: 'center',
     },
     profileLabel: {
@@ -31,18 +32,16 @@ const useStyles = makeStyles({
         width: '50px',
         maxWidth: '100%',
     },
-    profileImage: {
-        alignContent: 'center',
-        alignItems: 'center',
-        background: '#EEEEEE',
-        borderRadius: '30%',
-        width: '110px',
-        height: '110px',
-        margin: 'auto',
+    inputLabel: {
+        width: '75%',
+        maxWidth: '75%',
+        display:'inline-block',
         marginTop: '25px',
+        alignContent: 'left',
+        alignItems: 'left',
     },
-    profile: {
-        marginTop: '27px',
+    inputLabelP: {
+        display:'flex',
     }
 });
 
@@ -54,6 +53,9 @@ function WelcomePage() {
                プロフィール
             </Box>
             <ProfileImageUpload/>
+            <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
+                <p className={classes.inputLabelP}>性別【必須】</p>
+            </Box>
         </Typography>
     );
 }
