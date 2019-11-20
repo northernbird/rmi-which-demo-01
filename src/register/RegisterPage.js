@@ -127,10 +127,12 @@ function RegisterPage() {
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>性別【必須】</p>
                 </Box>
+                {errors.gender &&
+                <p className={classes.error}>性別は入力必須項目です</p>}
                 <Box fontSize={12} fontWeight={700} className={classes.genderButtonGroup}>
-                    <GenderRadioButton name="gender" value="woman" label={'女性'} ref={register}/>
-                    <GenderRadioButton name="gender" value="man" label={'男性'} ref={register}/>
-                    <GenderRadioButton name="gender" value="other" label={'その他'} ref={register}/>
+                    <GenderRadioButton name="gender" value="woman" label={'女性'} register={register({ required: true })}/>
+                    <GenderRadioButton name="gender" value="man" label={'男性'} register={register({ required: true })}/>
+                    <GenderRadioButton name="gender" value="other" label={'その他'} register={register({ required: true })}/>
                 </Box>
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>生年月日【必須】</p>

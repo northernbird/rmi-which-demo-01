@@ -27,11 +27,11 @@ const useStyles = makeStyles({
 });
 
 function GenderRadioButton(props) {
-    const {name, value, label} = props
+    const {name, value, label, register} = props
     const classes = useStyles()
     return (
         <Box className={classes.genderButtonGroup} fontSize={14} fontWeight={700} color={'#686868'}>
-            <input name={name} type="radio" value={value} className={classes.input}/>
+            <input name={name} type="radio" value={value} className={classes.input} ref={register}/>
             <p className={classes.label}>{label}</p>
         </Box>
     );
