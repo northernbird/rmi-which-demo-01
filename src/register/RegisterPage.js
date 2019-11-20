@@ -139,8 +139,8 @@ function RegisterPage() {
                 </Box>
                 <Box className={classes.birthdaySelectBox}>
                     <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
-                        <BirthdayYearSelectBox label={'年'} dataList={birthDayYear} ref={register}/>
-                        <BirthdayYearSelectBox label={'月'} dataList={birthDayMonth} ref={register}/>
+                        <BirthdayYearSelectBox label={'年'} dataList={birthDayYear} register={register({ required: true })}/>
+                        <BirthdayYearSelectBox label={'月'} dataList={birthDayMonth} register={register({ required: true })}/>
                     </Box>
                     {errors.birthDayYear && <span>This field is required</span>}
                     {errors.birthDayMonth && <span>This field is required</span>}

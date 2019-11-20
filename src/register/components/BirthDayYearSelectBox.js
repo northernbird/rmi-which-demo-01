@@ -29,11 +29,11 @@ const useStyles = makeStyles({
 });
 
 function BirthdayYearSelectBox(props) {
-    const {label, dataList} = props
+    const {label, dataList, register} = props
     const classes = useStyles()
     return (
             <Box className={classes.selectBoxGroup}>
-                <Select className={classes.selectBox}>
+                <Select className={classes.selectBox} ref={register}>
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
