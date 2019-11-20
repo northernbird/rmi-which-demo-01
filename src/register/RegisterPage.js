@@ -5,6 +5,7 @@ import React from "react";
 import ProfileImageUpload from './components/ProfileImageUpload'
 import GenderRadioButton from './components/GenderRadioButton'
 import BirthdayYearSelectBox from './components/BirthDayYearSelectBox'
+import RegisterButton from './components/RegisterButton'
 
 const useStyles = makeStyles({
     pannel: {
@@ -118,6 +119,9 @@ function WelcomePage() {
             </Box>
             <Box>
                 <input type="text" placeholder="First name" name="First name" className={classes.inputText}/>
+            </Box>
+            <Box>
+                <RegisterButton label={'登録する'} />
             </Box>
         </Typography>
     );
