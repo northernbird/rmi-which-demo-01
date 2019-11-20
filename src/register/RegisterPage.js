@@ -50,7 +50,7 @@ const useStyles = makeStyles({
         maxWidth: '75%',
         display:'inline-block',
     },
-    test: {
+    birthdaySelectBox: {
         width: '75%',
         maxWidth: '75%',
         textAlign: 'center',
@@ -60,6 +60,18 @@ const useStyles = makeStyles({
         width: '75%',
         maxWidth: '75%',
         textAlign: 'center'
+    },
+    inputText: {
+        width: '75%',
+        maxWidth: '75%',
+        textAlign: 'center',
+        borderBottom: 'solid 1px #7d7d7d',
+        borderLeft: 'solid 1px #7d7d7d',
+        borderRadius: '4px',
+        borderRight: 'solid 1px #7d7d7d',
+        borderTop: 'solid 1px #7d7d7d',
+        boxShadow: '0 2px 5px rgba(0,0,0,0.2) inset',
+        height: '40px'
     }
 });
 
@@ -82,14 +94,31 @@ function WelcomePage() {
             <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                 <p className={classes.inputLabelP}>生年月日【必須】</p>
             </Box>
-            <Box className={classes.test}>
+            <Box className={classes.birthdaySelectBox}>
                 <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
                     <BirthdayYearSelectBox label={'年'}/>
                     <BirthdayYearSelectBox label={'月'}/>
                     <BirthdayYearSelectBox label={'日'}/>
                 </Box>
             </Box>
-
+            <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
+                <p className={classes.inputLabelP}>ニックネーム【必須】※変更可能</p>
+            </Box>
+            <Box>
+                <input type="text" placeholder="First name" name="First name" className={classes.inputText}/>
+            </Box>
+            <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
+                <p className={classes.inputLabelP}>郵便番号【必須】※地域のオススメが表示されます</p>
+            </Box>
+            <Box>
+                <input type="text" placeholder="First name" name="First name" className={classes.inputText}/>
+            </Box>
+            <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
+                <p className={classes.inputLabelP}>職業【任意】</p>
+            </Box>
+            <Box>
+                <input type="text" placeholder="First name" name="First name" className={classes.inputText}/>
+            </Box>
         </Typography>
     );
 }
