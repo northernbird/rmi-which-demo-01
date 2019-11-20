@@ -8,7 +8,6 @@ import { withRouter } from 'react-router';
 
 const useStyles = makeStyles({
     pannel: {
-        color: '#333',
         alignContent: 'center',
         alignItems: 'center',
         background: '#ffffff',
@@ -20,7 +19,6 @@ const useStyles = makeStyles({
         maxWidth: '100%',
         height: '380px',
         textAlign: 'center',
-        fontWeight: 700,
     },
     title: {
         textAlign: 'center',
@@ -35,10 +33,6 @@ const useStyles = makeStyles({
     }
 });
 
-const onClick = ()=> {
-    alert('Hello World')
-}
-
 function WelcomePage(props) {
     const {history} = props
     const classes = useStyles()
@@ -49,7 +43,7 @@ function WelcomePage(props) {
     }
 
     return (
-        <Typography component="div" className={classes.pannel}>
+        <Typography variant='caption' component="div" className={classes.pannel}>
             <Box letterSpacing={'0.2em'} fontSize={40} className={classes.title}>
                 Which
             </Box>

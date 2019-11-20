@@ -8,6 +8,10 @@ import { createMuiTheme } from '@material-ui/core/styles';
 const theme = createMuiTheme({
     typography: {
         fontFamily:'Lato',
+        color: '#333',
+        caption: {
+            fontWeight: 700,
+        },
     },
 });
 
