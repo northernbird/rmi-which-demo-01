@@ -84,9 +84,9 @@ function WelcomePage() {
             </Box>
             <Box className={classes.test}>
                 <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
-                    <BirthdayYearSelectBox/>
-                    <BirthdayYearSelectBox/>
-                    <BirthdayYearSelectBox/>
+                    <BirthdayYearSelectBox label={'年'}/>
+                    <BirthdayYearSelectBox label={'月'}/>
+                    <BirthdayYearSelectBox label={'日'}/>
                 </Box>
             </Box>
 

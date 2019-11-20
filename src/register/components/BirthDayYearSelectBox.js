@@ -28,7 +28,8 @@ const useStyles = makeStyles({
     },
 });
 
-function BirthdayYearSelectBox() {
+function BirthdayYearSelectBox(props) {
+    const {label} = props
     const classes = useStyles()
     return (
             <Box className={classes.selectBoxGroup}>
@@ -41,7 +42,7 @@ function BirthdayYearSelectBox() {
                     <MenuItem value={1997}>1997</MenuItem>
                 </Select>
                 <Box fontSize={12} fontWeight={700} className={classes.selectInputLabel} marginLeft={2}>
-                    <p className={classes.selectInput}>年</p>
+                    <p className={classes.selectInput}>{label}</p>
                 </Box>
             </Box>
     );
