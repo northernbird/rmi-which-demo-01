@@ -6,6 +6,7 @@ import ProfileImageUpload from './components/ProfileImageUpload'
 import GenderRadioButton from './components/GenderRadioButton'
 import BirthdayYearSelectBox from './components/BirthDayYearSelectBox'
 import RegisterButton from './components/RegisterButton'
+import useForm from 'react-hook-form'
 
 const useStyles = makeStyles({
     pannel: {
@@ -75,60 +76,77 @@ const useStyles = makeStyles({
         boxShadow: '0 2px 5px rgba(0,0,0,0.2) inset',
         height: '40px',
         fontSize: '14px'
-    }
+    },
+    tips: {
+        width: '75%',
+        maxWidth: '75%',
+        display:'inline-block',
+        alignContent: 'left',
+        alignItems: 'left',
+        fontSize: '10px',
+        color: '#686868'
+    },
 });
 
 const birthDayYear = [1996,1997,1998]
+
 const birthDayMonth = [1,2,3,4,5,6,7,8,9,10,11,12]
 
-function WelcomePage() {
+function RegisterPage() {
+    const { register, handleSubmit, watch, errors } = useForm()
     const classes = useStyles()
     return (
+
         <Typography component={'div'} className={classes.pannel}>
             <Box letterSpacing={'0.1em'} fontSize={14} fontWeight={700} className={classes.profileLabel}>
                プロフィール
             </Box>
-            <ProfileImageUpload/>
-            <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
-                <p className={classes.inputLabelP}>性別【必須】</p>
-            </Box>
-            <Box fontSize={12} fontWeight={700} className={classes.genderButtonGroup}>
-                <GenderRadioButton name="Developer" value="Yes" label={'女性'} />
-                <GenderRadioButton name="Developer" value="Yes" label={'男性'} />
-                <GenderRadioButton name="Developer" value="Yes" label={'その他'} />
-            </Box>
-            <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
-                <p className={classes.inputLabelP}>生年月日【必須】</p>
-            </Box>
-            <Box className={classes.birthdaySelectBox}>
-                <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
-                    <BirthdayYearSelectBox label={'年'} dataList={birthDayYear}/>
-                    <BirthdayYearSelectBox label={'月'} dataList={birthDayMonth}/>
+            <form>
+                <ProfileImageUpload/>
+                <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
+                    <p className={classes.inputLabelP}>性別【必須】</p>
                 </Box>
-            </Box>
-            <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
-                <p className={classes.inputLabelP}>ニックネーム【必須】※変更可能</p>
-            </Box>
-            <Box>
-                <input type="text" placeholder="ニックネーム" name="nickName" className={classes.inputText}/>
-            </Box>
-            <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
-                <p className={classes.inputLabelP}>郵便番号【必須】※地域のオススメが表示されます</p>
-            </Box>
-            <Box>
-                <input type="text" placeholder="1501234" name="postCode" className={classes.inputText}/>
-            </Box>
-            <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
-                <p className={classes.inputLabelP}>職業【任意】</p>
-            </Box>
-            <Box>
-                <input type="text" placeholder="アパレル店員・大学生" name="job" className={classes.inputText}/>
-            </Box>
-            <Box>
-                <RegisterButton label={'登録する'} />
-            </Box>
+                <Box fontSize={12} fontWeight={700} className={classes.genderButtonGroup}>
+                    <GenderRadioButton name="Developer" value="Yes" label={'女性'} />
+                    <GenderRadioButton name="Developer" value="Yes" label={'男性'} />
+                    <GenderRadioButton name="Developer" value="Yes" label={'その他'} />
+                </Box>
+                <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
+                    <p className={classes.inputLabelP}>生年月日【必須】</p>
+                </Box>
+                <Box className={classes.birthdaySelectBox}>
+                    <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
+                        <BirthdayYearSelectBox label={'年'} dataList={birthDayYear}/>
+                        <BirthdayYearSelectBox label={'月'} dataList={birthDayMonth}/>
+                    </Box>
+                </Box>
+                <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
+                    <p className={classes.inputLabelP}>ニックネーム【必須】※変更可能</p>
+                </Box>
+                <Box>
+                    <input type="text" placeholder="ニックネーム" name="nickName" className={classes.inputText}/>
+                </Box>
+                <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
+                    <p className={classes.inputLabelP}>郵便番号【必須】※地域のオススメが表示されます</p>
+                </Box>
+                <Box>
+                    <input type="text" placeholder="1501234" name="postCode" className={classes.inputText}/>
+                </Box>
+                <Box fontSize={12} fontWeight={700} className={classes.tips}>
+                    <p className={classes.inputLabelP}>※半角数字7ケタ、ハイフンなしで入力</p>
+                </Box>
+                <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
+                    <p className={classes.inputLabelP}>職業【任意】</p>
+                </Box>
+                <Box>
+                    <input type="text" placeholder="アパレル店員・大学生" name="job" className={classes.inputText}/>
+                </Box>
+                <Box>
+                    <RegisterButton label={'登録する'} />
+                </Box>
+            </form>
         </Typography>
     );
 }
 
-export default WelcomePage;
+export default RegisterPage;
