@@ -44,6 +44,16 @@ const useStyles = makeStyles({
         alignContent: 'left',
         alignItems: 'left',
     },
+
+    inputLabelJob: {
+        width: '75%',
+        maxWidth: '75%',
+        display:'inline-block',
+        marginTop: '10px',
+        alignContent: 'left',
+        alignItems: 'left',
+    },
+
     inputLabelP: {
         display:'flex',
     },
@@ -131,11 +141,11 @@ function RegisterPage() {
                 </Box>
                 <Box>
                     <input type="text" placeholder="1501234" name="postCode" className={classes.inputText}/>
+                    <Box fontSize={12} fontWeight={700} className={classes.tips}>
+                        <p className={classes.inputLabelP}>※半角数字7ケタ、ハイフンなしで入力</p>
+                    </Box>
                 </Box>
-                <Box fontSize={12} fontWeight={700} className={classes.tips}>
-                    <p className={classes.inputLabelP}>※半角数字7ケタ、ハイフンなしで入力</p>
-                </Box>
-                <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
+                <Box fontSize={12} fontWeight={700} className={classes.inputLabelJob}>
                     <p className={classes.inputLabelP}>職業【任意】</p>
                 </Box>
                 <Box>
