@@ -96,6 +96,16 @@ const useStyles = makeStyles({
         fontSize: '10px',
         color: '#686868'
     },
+    error: {
+        width: '75%',
+        maxWidth: '75%',
+        display:'inline-block',
+        textAlign: 'left',
+        alignContent: 'left',
+        alignItems: 'left',
+        fontSize: '12px',
+        color: 'red'
+    },
 });
 
 const birthDayYear = [1996,1997,1998]
@@ -104,6 +114,7 @@ const birthDayMonth = [1,2,3,4,5,6,7,8,9,10,11,12]
 
 function RegisterPage() {
     const { register, handleSubmit, watch, errors } = useForm()
+    const onSubmit = data => { console.log(data) }
     const classes = useStyles()
     return (
 
@@ -111,36 +122,42 @@ function RegisterPage() {
             <Box letterSpacing={'0.1em'} fontSize={14} fontWeight={700} className={classes.profileLabel}>
                プロフィール
             </Box>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <ProfileImageUpload/>
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>性別【必須】</p>
                 </Box>
                 <Box fontSize={12} fontWeight={700} className={classes.genderButtonGroup}>
-                    <GenderRadioButton name="Developer" value="Yes" label={'女性'} />
-                    <GenderRadioButton name="Developer" value="Yes" label={'男性'} />
-                    <GenderRadioButton name="Developer" value="Yes" label={'その他'} />
+                    <GenderRadioButton name="gender" value="woman" label={'女性'} ref={register}/>
+                    <GenderRadioButton name="gender" value="man" label={'男性'} ref={register}/>
+                    <GenderRadioButton name="gender" value="other" label={'その他'} ref={register}/>
                 </Box>
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>生年月日【必須】</p>
                 </Box>
                 <Box className={classes.birthdaySelectBox}>
                     <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
-                        <BirthdayYearSelectBox label={'年'} dataList={birthDayYear}/>
-                        <BirthdayYearSelectBox label={'月'} dataList={birthDayMonth}/>
+                        <BirthdayYearSelectBox label={'年'} dataList={birthDayYear} ref={register}/>
+                        <BirthdayYearSelectBox label={'月'} dataList={birthDayMonth} ref={register}/>
                     </Box>
+                    {errors.birthDayYear && <span>This field is required</span>}
+                    {errors.birthDayMonth && <span>This field is required</span>}
                 </Box>
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>ニックネーム【必須】※変更可能</p>
                 </Box>
                 <Box>
-                    <input type="text" placeholder="ニックネーム" name="nickName" className={classes.inputText}/>
+                    {errors.nickName &&
+                    <p className={classes.error}>ニックネームは入力必須です</p>}
+                    <input type="text" placeholder="ニックネーム" name="nickName" className={classes.inputText} ref={register({ required: true })}/>
                 </Box>
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>郵便番号【必須】※地域のオススメが表示されます</p>
                 </Box>
                 <Box>
-                    <input type="text" placeholder="1501234" name="postCode" className={classes.inputText}/>
+                    {errors.postCode &&
+                    <p className={classes.error}>郵便番号は入力必須です</p>}
+                    <input type="text" placeholder="1501234" name="postCode" className={classes.inputText} ref={register({ required: true })}/>
                     <Box fontSize={12} fontWeight={700} className={classes.tips}>
                         <p className={classes.inputLabelP}>※半角数字7ケタ、ハイフンなしで入力</p>
                     </Box>
@@ -149,7 +166,8 @@ function RegisterPage() {
                     <p className={classes.inputLabelP}>職業【任意】</p>
                 </Box>
                 <Box>
-                    <input type="text" placeholder="アパレル店員・大学生" name="job" className={classes.inputText}/>
+                    <input type="text" placeholder="アパレル店員・大学生" name="job" className={classes.inputText} />
+                    {errors.job && <span>This field is required</span>}
                 </Box>
                 <Box>
                     <RegisterButton label={'登録する'} />

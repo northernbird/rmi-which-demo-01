@@ -26,7 +26,7 @@ function RegisterButton(props) {
     const { onClick, label } = props
     const classes = useStyles();
     return (
-        <Button className={classes.button} onClick={onClick}>
+        <Button type={"submit"} className={classes.button} onClick={onClick}>
             {label}
         </Button>
     );
