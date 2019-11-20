@@ -52,6 +52,11 @@ const useStyles = makeStyles({
         maxWidth: '75%',
         display:'inline-block',
     },
+    selectBoxGroup: {
+        width: '75%',
+        maxWidth: '75%',
+        display:'inline-block',
+    },
     selectBox: {
         display:'inline-block',
         fontSize: '14px',
@@ -59,7 +64,19 @@ const useStyles = makeStyles({
     },
     menuItem: {
         fontSize: '14px',
-    }
+    },
+    selectInput: {
+        display:'flex',
+    },
+    selectInputLabel: {
+        width: '75%',
+        maxWidth: '75%',
+        display:'inline-block',
+        marginTop: '25px',
+        alignContent: 'left',
+        alignItems: 'left',
+        verticalAlign:'10px',
+    },
 });
 
 function WelcomePage() {
@@ -81,8 +98,7 @@ function WelcomePage() {
             <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                 <p className={classes.inputLabelP}>生年月日【必須】</p>
             </Box>
-
-            <Box>
+            <Box className={classes.selectBoxGroup}>
                 <Select className={classes.selectBox}>
                     <MenuItem value="">
                         <em>None</em>
@@ -91,8 +107,8 @@ function WelcomePage() {
                     <MenuItem value={1996}>1996</MenuItem>
                     <MenuItem value={1997}>1997</MenuItem>
                 </Select>
-                <Box fontSize={12} fontWeight={700} className={classes.inputLabel} marginLeft={2}>
-                    <p className={classes.inputLabelP}>年</p>
+                <Box fontSize={12} fontWeight={700} className={classes.selectInputLabel} marginLeft={2}>
+                    <p className={classes.selectInput}>年</p>
                 </Box>
             </Box>
 
