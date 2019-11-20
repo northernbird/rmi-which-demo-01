@@ -1,8 +1,7 @@
-import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from '@material-ui/core/styles';
 import React from "react";
-import ProfileImageUpload from './components/ProfileImageUpload'
+import ImageUpload from './ImageUpload'
 
 const useStyles = makeStyles({
     pannel: {
@@ -46,16 +45,17 @@ const useStyles = makeStyles({
     }
 });
 
-function WelcomePage() {
+function ProfileImageUpload() {
     const classes = useStyles()
     return (
-        <Typography component={'div'} className={classes.pannel}>
-            <Box letterSpacing={'0.1em'} fontSize={14} fontWeight={700} className={classes.profileLabel}>
-               プロフィール
-            </Box>
-            <ProfileImageUpload/>
-        </Typography>
+        <div>
+            <div className={classes.line}/>
+            <div className={classes.profileImage}>
+                <ImageUpload className={classes.profile}/>
+                <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像を追加</Box>
+            </div>
+        </div>
     );
 }
 
-export default WelcomePage;
+export default ProfileImageUpload;

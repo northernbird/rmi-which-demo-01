@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function ProfileImageUpload(props) {
+export default function ImageUpload(props) {
     const { className, style } = props;
     return (
         <svg
@@ -37,12 +37,12 @@ export default function ProfileImageUpload(props) {
     );
 }
 
-ProfileImageUpload.propTypes = {
+ImageUpload.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
 };
 
-ProfileImageUpload.defaultProps = {
+ImageUpload.defaultProps = {
     className: undefined,
     style: undefined,
 };
