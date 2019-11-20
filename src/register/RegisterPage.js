@@ -5,8 +5,10 @@ import React from "react";
 
 function WelcomePage() {
     return (
-        <Box>
-            Hello Register
+        <Box fontFamily="Lato">
+            <Box letterSpacing={'0.1em'} fontSize={14} fontWeight={700}>
+               プロフィール
+            </Box>
         </Box>
     );
 }

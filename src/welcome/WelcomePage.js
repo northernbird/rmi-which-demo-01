@@ -45,16 +45,16 @@ function WelcomePage(props) {
     const classes = useStyles()
 
     const routeChange = () => {
-        let path = '/test'
+        let path = '/register'
         history.push(path)
     }
 
     return (
         <Typography component="div" className={classes.pannel}>
-            <Box fontFamily="Lato" letterSpacing={'0.2em'} fontSize={40} fontWeight={700}>
+            <Box letterSpacing={'0.2em'} fontSize={40} fontWeight={700}>
                 Which
             </Box>
-            <Box fontFamily="Lato" letterSpacing={'0.1em'} fontSize={14} fontWeight={700} className={classes.subTitle}>
+            <Box letterSpacing={'0.1em'} fontSize={14} fontWeight={700} className={classes.subTitle}>
                 - みんなに意見を聞いてみよう -
             </Box>
             <Button onClick={routeChange}/>
