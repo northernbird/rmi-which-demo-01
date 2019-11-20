@@ -5,13 +5,9 @@ import RegisterPage from './register/RegisterPage';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-
 const theme = createMuiTheme({
     typography: {
-        fontFamily: [
-            'Lato',
-        ].join(','),
+        fontFamily:'Lato',
     },
 });
 
