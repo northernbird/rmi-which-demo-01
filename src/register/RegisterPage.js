@@ -3,6 +3,7 @@ import Box from "@material-ui/core/Box";
 import { makeStyles } from '@material-ui/core/styles';
 import React from "react";
 import ProfileImageUpload from './components/ProfileImageUpload'
+import GenderRadioButton from './components/GenderRadioButton'
 
 const useStyles = makeStyles({
     pannel: {
@@ -44,7 +45,10 @@ const useStyles = makeStyles({
         display:'flex',
     },
     genderButtonGroup: {
-        display:'flex',
+        width: '75%',
+        maxWidth: '75%',
+        display:'inline-block',
+        marginTop: '15px',
     }
 });
 
@@ -59,8 +63,10 @@ function WelcomePage() {
             <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                 <p className={classes.inputLabelP}>性別【必須】</p>
             </Box>
-            <Box>
-
+            <Box fontSize={12} fontWeight={700} className={classes.genderButtonGroup}>
+                <GenderRadioButton name="Developer" value="Yes" label={'女性'} />
+                <GenderRadioButton name="Developer" value="Yes" label={'男性'} />
+                <GenderRadioButton name="Developer" value="Yes" label={'その他'} />
             </Box>
         </Typography>
     );
