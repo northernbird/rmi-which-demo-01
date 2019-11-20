@@ -6,9 +6,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles({
     selectBoxGroup: {
-        width: '75%',
-        maxWidth: '75%',
+        width: '30%',
+        maxWidth: '30%',
         display:'inline-block',
+        height: '40px',
+        marginRight: '10px'
     },
     selectBox: {
         display:'inline-block',
@@ -19,10 +21,7 @@ const useStyles = makeStyles({
         display:'flex',
     },
     selectInputLabel: {
-        width: '75%',
-        maxWidth: '75%',
         display:'inline-block',
-        marginTop: '25px',
         alignContent: 'left',
         alignItems: 'left',
         verticalAlign:'10px',

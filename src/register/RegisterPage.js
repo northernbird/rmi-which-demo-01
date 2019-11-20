@@ -50,6 +50,17 @@ const useStyles = makeStyles({
         maxWidth: '75%',
         display:'inline-block',
     },
+    test: {
+        width: '75%',
+        maxWidth: '75%',
+        textAlign: 'center',
+        display:'inline-block',
+    },
+    birthdaySelectGroup: {
+        width: '75%',
+        maxWidth: '75%',
+        textAlign: 'center'
+    }
 });
 
 function WelcomePage() {
@@ -71,7 +82,14 @@ function WelcomePage() {
             <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                 <p className={classes.inputLabelP}>生年月日【必須】</p>
             </Box>
-            <BirthdayYearSelectBox/>
+            <Box className={classes.test}>
+                <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
+                    <BirthdayYearSelectBox/>
+                    <BirthdayYearSelectBox/>
+                    <BirthdayYearSelectBox/>
+                </Box>
+            </Box>
+
         </Typography>
     );
 }
