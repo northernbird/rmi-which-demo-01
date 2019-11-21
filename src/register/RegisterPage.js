@@ -59,8 +59,8 @@ const useStyles = makeStyles({
         display:'flex',
     },
     genderButtonGroup: {
-        width: '75%',
-        maxWidth: '75%',
+        width: '80%',
+        maxWidth: '80%',
         display:'inline-block',
     },
     birthdaySelectBox: {

@@ -5,8 +5,8 @@ import React from "react";
 const useStyles = makeStyles({
     genderButtonGroup: {
         display:'inline-block',
-        width: '30%',
-        maxWidth: '30%',
+        width: '31%',
+        maxWidth: '31%',
         borderBottom: 'solid 1px #7d7d7d',
         borderLeft: 'solid 1px #7d7d7d',
         borderRadius: '4px',
