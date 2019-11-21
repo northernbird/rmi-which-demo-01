@@ -116,8 +116,6 @@ function RegisterPage() {
     const { register, handleSubmit, watch, errors,  unregister, setValue } = useForm()
     const onSubmit = data => { alert(JSON.stringify(data)) }
     const classes = useStyles()
-    console.log(watch('birthYear'))
-    console.log(watch('birthMonth'))
     return (
 
         <Typography component={'div'} className={classes.pannel}>
@@ -131,7 +129,7 @@ function RegisterPage() {
                 </Box>
                 {errors.gender &&
                 <p className={classes.error}>性別は入力必須項目です</p>}
-                <GenderRadioButtonGroup register={register({ required: true })} />
+                <GenderRadioButtonGroup {...{register: register({ required: true })}} />
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>生年月日【必須】</p>
                 </Box>

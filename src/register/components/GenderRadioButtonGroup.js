@@ -21,7 +21,6 @@ const useStyles = makeStyles({
         marginRight: '10px',
         backgroundColor: "white"
     },
-
     genderButtonSelected: {
         display:'inline-block',
         width: '31%',
@@ -32,7 +31,6 @@ const useStyles = makeStyles({
         background: 'linear-gradient(135deg, #2efdf7, #0f8bfd)',
         color: "white",
     },
-
     input: {
         marginTop: '0px'
     },
