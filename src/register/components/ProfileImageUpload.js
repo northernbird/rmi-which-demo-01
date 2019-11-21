@@ -59,9 +59,11 @@ function ProfileImageUpload() {
             <div className={classes.profileImage}>
                 <div {...getRootProps()}>
                     <input {...getInputProps()} />
-                    {isDragActive ? <p>画像をドロップ ...</p> : <ImageUpload className={classes.profile}/>}
+                    {isDragActive ? <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像をドロップ ...</Box> : <Box>
+                        <ImageUpload className={classes.profile}/>
+                        <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像を追加</Box>
+                    </Box>}
                 </div>
-                <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像を追加</Box>
             </div>
         </div>
     );
