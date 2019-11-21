@@ -1,7 +1,8 @@
 import Box from "@material-ui/core/Box";
 import { makeStyles } from '@material-ui/core/styles';
-import React from "react";
+import React, { useCallback } from "react";
 import ImageUpload from './ImageUpload'
+import { useDropzone } from "react-dropzone";
 
 const useStyles = makeStyles({
     pannel: {
@@ -47,11 +48,19 @@ const useStyles = makeStyles({
 
 function ProfileImageUpload() {
     const classes = useStyles()
+    const onDrop = useCallback(acceptedFiles => {
+        // Do something with the files
+    }, []);
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
     return (
         <div>
             <div className={classes.line}/>
             <div className={classes.profileImage}>
-                <ImageUpload className={classes.profile}/>
+                <div {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    {isDragActive ? <p>画像をドロップ ...</p> : <ImageUpload className={classes.profile}/>}
+                </div>
                 <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像を追加</Box>
             </div>
         </div>
