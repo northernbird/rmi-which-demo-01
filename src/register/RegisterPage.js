@@ -113,9 +113,11 @@ const birthDayYear = [1996,1997,1998]
 const birthDayMonth = [1,2,3,4,5,6,7,8,9,10,11,12]
 
 function RegisterPage() {
-    const { register, handleSubmit, watch, errors } = useForm()
-    const onSubmit = data => { console.log(data) }
+    const { register, handleSubmit, watch, errors,  unregister, setValue } = useForm()
+    const onSubmit = data => { alert(JSON.stringify(data)) }
     const classes = useStyles()
+    console.log(watch('birthYear'))
+    console.log(watch('gender'))
     return (
 
         <Typography component={'div'} className={classes.pannel}>
@@ -139,11 +141,11 @@ function RegisterPage() {
                 </Box>
                 <Box className={classes.birthdaySelectBox}>
                     <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
-                        <BirthdayYearSelectBox label={'年'} dataList={birthDayYear} register={register({ required: true })}/>
-                        <BirthdayYearSelectBox label={'月'} dataList={birthDayMonth} register={register({ required: true })}/>
+                        <BirthdayYearSelectBox {...{ register: register({ required: true }), unregister, setValue, name: "birthYear", label:"年", dataList:birthDayYear }} />
+                        <BirthdayYearSelectBox {...{ register: register({ required: true }), unregister, setValue, name: "birthMonth", label:"月", dataList:birthDayMonth }} />
                     </Box>
-                    {errors.birthDayYear && <span>This field is required</span>}
-                    {errors.birthDayMonth && <span>This field is required</span>}
+                    {errors.birthYear && <span>This field is required</span>}
+                    {errors.birthMonth && <span>This field is required</span>}
                 </Box>
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>ニックネーム【必須】※変更可能</p>
