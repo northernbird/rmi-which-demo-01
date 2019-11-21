@@ -19,6 +19,7 @@ const useStyles = makeStyles({
     },
     selectInput: {
         display:'flex',
+        color: '#686868'
     },
     selectInputLabel: {
         display:'inline-block',

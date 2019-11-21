@@ -17,6 +17,7 @@ const useStyles = makeStyles({
         maxWidth: '100%',
         height: '100%',
         textAlign: 'center',
+        color: '#686868'
     },
     profileLabel: {
         alignContent: 'center',
@@ -94,7 +95,6 @@ const useStyles = makeStyles({
         alignContent: 'left',
         alignItems: 'left',
         fontSize: '10px',
-        color: '#686868'
     },
     error: {
         width: '75%',
