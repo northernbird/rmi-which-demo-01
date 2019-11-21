@@ -117,7 +117,7 @@ function RegisterPage() {
     const onSubmit = data => { alert(JSON.stringify(data)) }
     const classes = useStyles()
     console.log(watch('birthYear'))
-    console.log(watch('gender'))
+    console.log(watch('birthMonth'))
     return (
 
         <Typography component={'div'} className={classes.pannel}>
@@ -139,13 +139,15 @@ function RegisterPage() {
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>生年月日【必須】</p>
                 </Box>
+                {errors.birthYear &&
+                <p className={classes.error}>生年月日(年)は入力必須項目です</p>}
+                {errors.birthMonth &&
+                <p className={classes.error}>生年月日(月)は入力必須項目です</p>}
                 <Box className={classes.birthdaySelectBox}>
                     <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
                         <BirthdayYearSelectBox {...{ register: register({ required: true }), unregister, setValue, name: "birthYear", label:"年", dataList:birthDayYear }} />
                         <BirthdayYearSelectBox {...{ register: register({ required: true }), unregister, setValue, name: "birthMonth", label:"月", dataList:birthDayMonth }} />
                     </Box>
-                    {errors.birthYear && <span>This field is required</span>}
-                    {errors.birthMonth && <span>This field is required</span>}
                 </Box>
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>ニックネーム【必須】※変更可能</p>

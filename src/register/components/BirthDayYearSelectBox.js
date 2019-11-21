@@ -1,6 +1,6 @@
 import Box from "@material-ui/core/Box";
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Select } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -30,14 +30,19 @@ const useStyles = makeStyles({
 
 function BirthdayYearSelectBox(props) {
     const {name, label, dataList, register, unregister, setValue} = props
+    const [inputValue, setInputValue] = useState("");
+    const handleChange = (e) => {
+        setInputValue(e.target.value)
+        setValue(name, e.target.value)
+    }
     const classes = useStyles()
     useEffect(() => {
         register({ name });
-        return () => unregister(name);
-    }, [name, register, unregister]);
+    }, [name, register, unregister, inputValue]);
     return (
             <Box className={classes.selectBoxGroup}>
-                <Select className={classes.selectBox} onChange={e => setValue(name, e.target.value)}>
+                {inputValue}
+                <Select className={classes.selectBox} onChange={handleChange} value={inputValue}>
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
