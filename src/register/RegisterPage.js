@@ -145,8 +145,8 @@ function RegisterPage() {
                 <p className={classes.error}>生年月日(月)は入力必須項目です</p>}
                 <Box className={classes.birthdaySelectBox}>
                     <Box fontSize={12} fontWeight={700} className={classes.birthdaySelectGroup}>
-                        <BirthdayYearSelectBox {...{ register: register({ required: true }), unregister, setValue, name: "birthYear", label:"年", dataList:birthDayYear }} />
-                        <BirthdayYearSelectBox {...{ register: register({ required: true }), unregister, setValue, name: "birthMonth", label:"月", dataList:birthDayMonth }} />
+                        <BirthdayYearSelectBox {...{ watch, register: register({ required: true }), setValue, name: "birthYear", label:"年", dataList:birthDayYear }} />
+                        <BirthdayYearSelectBox {...{ watch, register: register({ required: true }), setValue, name: "birthMonth", label:"月", dataList:birthDayMonth }} />
                     </Box>
                 </Box>
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
