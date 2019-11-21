@@ -1,7 +1,6 @@
 import Box from "@material-ui/core/Box";
 import { makeStyles } from '@material-ui/core/styles';
 import React, { useState } from 'react';
-import GenderRadioButton from './GenderRadioButton'
 
 const useStyles = makeStyles({
     genderButtonGroup: {
@@ -20,23 +19,19 @@ const useStyles = makeStyles({
         borderTop: 'solid 1px #7d7d7d',
         height: '40px',
         marginRight: '10px',
-        backgroundColor: "red"
+        backgroundColor: "white"
     },
 
     genderButtonSelected: {
         display:'inline-block',
         width: '31%',
         maxWidth: '31%',
-        borderBottom: 'solid 1px #7d7d7d',
-        borderLeft: 'solid 1px #7d7d7d',
         borderRadius: '4px',
-        borderRight: 'solid 1px #7d7d7d',
-        borderTop: 'solid 1px #7d7d7d',
         height: '40px',
         marginRight: '10px',
-        backgroundColor: "blue"
+        background: 'linear-gradient(135deg, #2efdf7, #0f8bfd)',
+        color: "white",
     },
-
 
     input: {
         marginTop: '0px'
