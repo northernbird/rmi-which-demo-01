@@ -33,7 +33,7 @@ function BirthdayYearSelectBox(props) {
     const [inputValue, setInputValue] = useState("");
     const handleChange = (e) => {
         setInputValue(e.target.value)
-        setValue(name, e.target.value)
+        setValue(name, e.target.value, true)
     }
     const classes = useStyles()
     useEffect(() => {
@@ -41,7 +41,6 @@ function BirthdayYearSelectBox(props) {
     }, [name, register, unregister, inputValue]);
     return (
             <Box className={classes.selectBoxGroup}>
-                {inputValue}
                 <Select className={classes.selectBox} onChange={handleChange} value={inputValue}>
                     <MenuItem value="">
                         <em>None</em>
