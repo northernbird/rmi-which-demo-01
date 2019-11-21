@@ -51,7 +51,7 @@ function ProfileImageUpload() {
     const onDrop = useCallback(acceptedFiles => {
         // Do something with the files
     }, []);
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+    const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({ onDrop });
 
     return (
         <div>
@@ -63,6 +63,8 @@ function ProfileImageUpload() {
                         <ImageUpload className={classes.profile}/>
                         <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像を追加</Box>
                     </Box>}
+                    {isDragReject && <Box><ImageUpload className={classes.profile}/>
+                        <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像を追加</Box></Box>}
                 </div>
             </div>
         </div>
