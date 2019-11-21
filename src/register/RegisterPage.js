@@ -3,7 +3,7 @@ import Box from "@material-ui/core/Box";
 import { makeStyles } from '@material-ui/core/styles';
 import React from "react";
 import ProfileImageUpload from './components/ProfileImageUpload'
-import GenderRadioButton from './components/GenderRadioButton'
+import GenderRadioButtonGroup from './components/GenderRadioButtonGroup'
 import BirthdayYearSelectBox from './components/BirthDayYearSelectBox'
 import RegisterButton from './components/RegisterButton'
 import useForm from 'react-hook-form'
@@ -131,11 +131,7 @@ function RegisterPage() {
                 </Box>
                 {errors.gender &&
                 <p className={classes.error}>性別は入力必須項目です</p>}
-                <Box fontSize={12} fontWeight={700} className={classes.genderButtonGroup}>
-                    <GenderRadioButton name="gender" value="woman" label={'女性'} register={register({ required: true })}/>
-                    <GenderRadioButton name="gender" value="man" label={'男性'} register={register({ required: true })}/>
-                    <GenderRadioButton name="gender" value="other" label={'その他'} register={register({ required: true })}/>
-                </Box>
+                <GenderRadioButtonGroup register={register({ required: true })} />
                 <Box fontSize={12} fontWeight={700} className={classes.inputLabel}>
                     <p className={classes.inputLabelP}>生年月日【必須】</p>
                 </Box>
