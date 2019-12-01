@@ -7,6 +7,10 @@ import GenderRadioButtonGroup from './components/GenderRadioButtonGroup'
 import BirthdayYearSelectBox from './components/BirthDayYearSelectBox'
 import RegisterButton from './components/RegisterButton'
 import useForm from 'react-hook-form'
+import axios from 'axios'
+
+
+
 
 const useStyles = makeStyles({
     pannel: {
@@ -114,7 +118,15 @@ const birthDayMonth = [1,2,3,4,5,6,7,8,9,10,11,12]
 
 function RegisterPage() {
     const { register, handleSubmit, watch, errors,  unregister, setValue } = useForm()
-    const onSubmit = data => { alert(JSON.stringify(data)) }
+    const onSubmit = async data => {
+
+        axios.defaults.baseURL = 'http://localhost:3000';
+        axios.defaults.headers.post['Content-Type'] = 'application/json';
+
+        alert(JSON.stringify(data))
+        const response = await axios.post('/users/register');
+        alert(JSON.stringify(response))
+    }
     const classes = useStyles()
     return (
 
