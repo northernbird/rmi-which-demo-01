@@ -2,6 +2,7 @@ import './App.css'
 import React from 'react';
 import WelcomePage from './welcome/WelcomePage';
 import RegisterPage from './register/RegisterPage';
+import InitialPage from './initial/InitialPage';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
@@ -26,6 +27,9 @@ function App() {
                     </Route>
                     <Route path="/register">
                         <RegisterPage/>
+                    </Route>
+                    <Route path="/initial">
+                        <InitialPage/>
                     </Route>
                 </Switch>
             </BrowserRouter>

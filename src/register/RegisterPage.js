@@ -8,9 +8,7 @@ import BirthdayYearSelectBox from './components/BirthDayYearSelectBox'
 import RegisterButton from './components/RegisterButton'
 import useForm from 'react-hook-form'
 import axios from 'axios'
-
-
-
+import { withRouter } from 'react-router';
 
 const useStyles = makeStyles({
     pannel: {
@@ -116,16 +114,21 @@ const birthDayYear = [1996,1997,1998]
 
 const birthDayMonth = [1,2,3,4,5,6,7,8,9,10,11,12]
 
-function RegisterPage() {
-    const { register, handleSubmit, watch, errors,  unregister, setValue } = useForm()
+function RegisterPage(props) {
+    const { register, handleSubmit, watch, errors, setValue } = useForm()
+    const {history} = props
     const onSubmit = async data => {
 
-        axios.defaults.baseURL = 'http://localhost:3000';
-        axios.defaults.headers.post['Content-Type'] = 'application/json';
+        // axios.defaults.baseURL = 'http://localhost:3000';
+        // axios.defaults.headers.post['Content-Type'] = 'application/json';
+        //
+        // alert(JSON.stringify(data))
+        // const response = await axios.post('/users/register');
+        // alert(JSON.stringify(response))
 
-        alert(JSON.stringify(data))
-        const response = await axios.post('/users/register');
-        alert(JSON.stringify(response))
+        let path = '/initial'
+        history.push(path)
+
     }
     const classes = useStyles()
     return (
@@ -189,4 +192,4 @@ function RegisterPage() {
     );
 }
 
-export default RegisterPage;
+export default withRouter(RegisterPage);
