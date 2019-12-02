@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import SubmitButton from './SubmitButton';
 
 const useStyles = makeStyles({
     flexPanel: {
@@ -37,44 +38,16 @@ const useStyles = makeStyles({
         'overflow': 'hidden',
         'text-decoration': 'none',
     },
-
-    p: {
-        'color': '#686868',
-        'font-family': 'Lato',
-        'font-size': '14px',
-        'font-weight': '700',
-        'height': 'auto',
-        'letter-spacing': '0.2em',
-        'text-align': 'center',
-        'width': 'auto',
-        'max-width': '100%',
-        'justify-content': 'center',
-        'display': 'flex',
-        '-webkit-box-orient': 'horizontal',
-        '-webkit-box-direction': 'normal',
-        'flex-direction': 'row',
-        '-webkit-box-align': 'center',
-        'align-items': 'center',
-        'align-content': 'center',
-        '-webkit-box-pack': 'center',
-        'overflow': 'visible',
-        'z-index': '0',
-        'pointer-events': 'all',
-        'flex-wrap': 'nowrap',
-        '-webkit-overflow-scrolling': 'touch',
-        'position': 'relative',
-        cursor: 'pointer',
-
-    }
 });
 
 function FooterBox(props) {
+    const onClick = () => {
+        alert('Hello')
+    }
     const classes = useStyles()
     return (
         <div className={classes.flexPanel}>
-            <a href="/live/EXawVAZqDr/1" className={classes.link}>
-                <p className={classes.p}>スタート</p>
-            </a>
+            <SubmitButton label={'スタート'} onClick={onClick}/>
         </div>
     );
 }
