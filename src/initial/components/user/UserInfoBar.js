@@ -48,6 +48,7 @@ const useStyles = makeStyles({
     sdProfilePanel : {
         display: 'flex',
         'flex-flow': 'row no-wrap',
+        'justify-content': 'flex-start',
     },
 
     sdProfileLabelPanel: {

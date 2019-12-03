@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import UserInfoBar from './user/UserInfoBar'
+import TitleBar from './TitleBar'
 
 const useStyles = makeStyles({
     sd: {
@@ -35,6 +36,7 @@ function ContentBox(props) {
     return (
         <div className={classes.sd}>
             <UserInfoBar/>
+            <TitleBar label={'ジャケットどっちが良い？'}/>
         </div>
     );
 }
