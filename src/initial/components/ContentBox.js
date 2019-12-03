@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import UserInfoBar from './user/UserInfoBar'
 import TitleBar from './TitleBar'
+import CompareImage from './CompareImage'
 
 const useStyles = makeStyles({
     sd: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles({
         'height': '465px',
         'margin': '25px 0px 0px 0px',
         'overflow-x': 'hidden',
-        'overflow-y': 'hidden',
+        'overflow-y': 'auto',
         'padding': '0px 0px 0px 0px',
         'width': '100%',
         'max-width': '100%',
@@ -37,6 +38,7 @@ function ContentBox(props) {
         <div className={classes.sd}>
             <UserInfoBar/>
             <TitleBar label={'ジャケットどっちが良い？'}/>
+            <CompareImage/>
         </div>
     );
 }
