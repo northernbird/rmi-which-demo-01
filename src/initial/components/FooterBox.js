@@ -11,6 +11,7 @@ const useStyles = makeStyles({
         'flex-direction': 'column',
         'align-content': 'center',
         'align-items': 'center',
+        'margin': '25px 0px 0px 0px',
     },
     link: {
         'align-content': 'center',

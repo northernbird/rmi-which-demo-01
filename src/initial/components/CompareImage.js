@@ -4,6 +4,12 @@ import UserInfoBar from './user/UserInfoBar'
 import TitleBar from './TitleBar'
 
 const useStyles = makeStyles({
+    sdPannel: {
+        display: 'flex',
+        flex: 'none',
+        width: '100%',
+        'justify-content': 'center',
+    },
     sd: {
         'border-radius': '6px',
         'box-shadow': '5px 5px 5px 0px rgba(0,0,0,0.2)',
@@ -30,7 +36,9 @@ const useStyles = makeStyles({
 function CompareImage(props) {
     const classes = useStyles()
     return (
-        <img src="https://storage.googleapis.com/production-os-assets/assets/24e1851f-25ac-4b52-96a4-467073e181e9" className={classes.sd} />
+        <div className={classes.sdPannel}>
+            <img src="https://storage.googleapis.com/production-os-assets/assets/24e1851f-25ac-4b52-96a4-467073e181e9" className={classes.sd} />
+        </div>
     );
 }
 
