@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import UserInfoBar from './user/UserInfoBar'
 
 const useStyles = makeStyles({
     sd: {
@@ -10,7 +11,6 @@ const useStyles = makeStyles({
         'flex-direction': 'row',
         'flex-wrap': 'wrap',
         'height': '465px',
-        'justify-content': 'center',
         'margin': '25px 0px 0px 0px',
         'overflow-x': 'hidden',
         'overflow-y': 'hidden',
@@ -26,6 +26,7 @@ const useStyles = makeStyles({
         '-webkit-box-direction': 'normal',
         '-webkit-box-align': 'center',
         'overflow': 'hidden',
+        'justify-content': 'flex-start',
     },
 });
 
@@ -33,6 +34,7 @@ function ContentBox(props) {
     const classes = useStyles()
     return (
         <div className={classes.sd}>
+            <UserInfoBar/>
         </div>
     );
 }
