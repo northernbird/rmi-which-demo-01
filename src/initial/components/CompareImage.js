@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import UserInfoBar from './user/UserInfoBar'
-import TitleBar from './TitleBar'
+import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles({
     sdPannel: {
@@ -31,6 +30,43 @@ const useStyles = makeStyles({
         'align-items': 'center',
         'overflow': 'hidden'
     },
+
+    searchSd: {
+        'bottom': '30px',
+        'color': '#dfdfdf',
+        'font-size': '20px',
+        'height': '10%',
+        'left': 'auto',
+        'margin': '0 0 0 0',
+        'position': 'absolute',
+        'right': '26px',
+        'top': 'auto',
+        'width': '20%',
+        'max-width': '100%',
+        'display': 'flex',
+        '-webkit-box-orient': 'horizontal',
+        '-webkit-box-direction': 'normal',
+        'flex-direction': 'row',
+        '-webkit-box-align': 'center',
+        'align-items': 'center',
+        'align-content': 'center',
+        '-webkit-box-pack': 'center',
+        'justify-content': 'center',
+        'overflow': 'visible',
+        'font-weight': 'normal',
+        'font-style': 'normal',
+        'line-height': '1',
+        'letter-spacing': 'normal',
+        'text-transform': 'none',
+        'white-space': 'nowrap',
+        'word-wrap': 'normal',
+        'direction': 'ltr',
+
+        'background': 'rgba(0, 0, 0, 0.5)',
+        'border-radius': '50%',
+    }
+
+
 });
 
 function CompareImage(props) {
@@ -38,6 +74,7 @@ function CompareImage(props) {
     return (
         <div className={classes.sdPannel}>
             <img src="https://storage.googleapis.com/production-os-assets/assets/24e1851f-25ac-4b52-96a4-467073e181e9" className={classes.sd} />
+            <SearchIcon className={classes.searchSd}/>
         </div>
     );
 }
