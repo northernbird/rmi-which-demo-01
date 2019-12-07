@@ -30,40 +30,45 @@ const useStyles = makeStyles({
         'align-items': 'center',
         'overflow': 'hidden'
     },
-
-    searchSd: {
-        'bottom': '30px',
-        'color': '#dfdfdf',
-        'font-size': '20px',
-        'height': '10%',
-        'left': 'auto',
-        'margin': '0 0 0 0',
-        'position': 'absolute',
-        'right': '26px',
-        'top': 'auto',
-        'width': '20%',
-        'max-width': '100%',
-        'display': 'flex',
-        '-webkit-box-orient': 'horizontal',
-        '-webkit-box-direction': 'normal',
-        'flex-direction': 'row',
-        '-webkit-box-align': 'center',
-        'align-items': 'center',
-        'align-content': 'center',
-        '-webkit-box-pack': 'center',
-        'justify-content': 'center',
-        'overflow': 'visible',
-        'font-weight': 'normal',
-        'font-style': 'normal',
-        'line-height': '1',
-        'letter-spacing': 'normal',
-        'text-transform': 'none',
-        'white-space': 'nowrap',
-        'word-wrap': 'normal',
-        'direction': 'ltr',
-
+    iconDiv: {
         'background': 'rgba(0, 0, 0, 0.5)',
         'border-radius': '50%',
+        // 'bottom': '30px',
+        'position': 'absolute',
+        'height': '35px',
+        'width': '35px',
+        // 'height': '9%',
+        // 'width': '3%',
+        // padding: '5% 5% 5% 5%',
+        'left': 'auto',
+        'margin': '70% 0% 0% 0%',
+        'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'flex-direction': 'row',
+        'right': '31px',
+
+        // 'top': 'auto',
+        // 'max-width': '100%',
+        // '-webkit-box-orient': 'horizontal',
+        // '-webkit-box-direction': 'normal',
+        // '-webkit-box-align': 'center',
+        // 'align-content': 'center',
+        // '-webkit-box-pack': 'center',
+        // 'overflow': 'visible',
+        // 'font-weight': 'normal',
+        // 'font-style': 'normal',
+        // 'line-height': '1',
+        // 'letter-spacing': 'normal',
+        // 'text-transform': 'none',
+        // 'white-space': 'nowrap',
+        // 'word-wrap': 'normal',
+        // 'direction': 'ltr',
+    },
+    icon: {
+        'position': 'relative',
+        'color': '#dfdfdf',
+        'font-size': '20px',
     }
 
 
@@ -74,7 +79,9 @@ function CompareImage(props) {
     return (
         <div className={classes.sdPannel}>
             <img src="https://storage.googleapis.com/production-os-assets/assets/24e1851f-25ac-4b52-96a4-467073e181e9" className={classes.sd} />
-            <SearchIcon className={classes.searchSd}/>
+            <div className={classes.iconDiv}>
+                <SearchIcon className={classes.icon}/>
+            </div>
         </div>
     );
 }

@@ -76,7 +76,7 @@ function ContentBox(props) {
             <UserInfoBar/>
             <TitleBar label={'ジャケットどっちが良い？'}/>
             <CompareImage/>
-            <SearchIcon className={classes.searchSd}>star</SearchIcon>
+            {/*<SearchIcon className={classes.searchSd}>star</SearchIcon>*/}
         </div>
     );
 }
