@@ -3,10 +3,18 @@ import { makeStyles } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 
 const useStyles = makeStyles({
-    genderButtonGroup: {
-        width: '80%',
-        maxWidth: '80%',
+    test: {
+        width: '75%',
+        maxWidth: '75%',
+        textAlign: 'center',
         display:'inline-block',
+    },
+    genderButtonGroup: {
+        width: '100%',
+        maxWidth: '100%',
+        display:'flex',
+        'flex-direction': 'row',
+        // 'margin-right': '20px',
     },
     genderButton: {
         display:'inline-block',
@@ -50,20 +58,23 @@ function GenderRadioButtonGroup(props) {
         setSelectedValue(e.target.value)
     }
     return (
-        <Box fontSize={12} fontWeight={700} className={classes.genderButtonGroup}>
-            <Box className={selectedValue==="male"? classes.genderButtonSelected : classes.genderButton} fontSize={14} fontWeight={700} color={'#686868'}>
-                <input name="gender" type="radio" value="male" className={classes.input} ref={register} checked={selectedValue==="male"} onChange={handleChange}/>
-                <p className={classes.label}>男性</p>
+        <div className={classes.test}>
+            <Box fontSize={12} fontWeight={700} className={classes.genderButtonGroup}>
+                <Box className={selectedValue==="male"? classes.genderButtonSelected : classes.genderButton} fontSize={14} fontWeight={700} color={'#686868'}>
+                    <input name="gender" type="radio" value="male" className={classes.input} ref={register} checked={selectedValue==="male"} onChange={handleChange}/>
+                    <p className={classes.label}>男性</p>
+                </Box>
+                <Box className={selectedValue==="female"? classes.genderButtonSelected : classes.genderButton} fontSize={14} fontWeight={700} color={'#686868'}>
+                    <input name="gender" type="radio" value="female" className={classes.input} ref={register} checked={selectedValue==="female"} onChange={handleChange}/>
+                    <p className={classes.label}>女性</p>
+                </Box>
+                <Box className={selectedValue==="other"? classes.genderButtonSelected : classes.genderButton}  fontSize={14} fontWeight={700} color={'#686868'}>
+                    <input name="gender" type="radio" value="other" className={classes.input} ref={register} checked={selectedValue==="other"} onChange={handleChange}/>
+                    <p className={classes.label}>その他</p>
+                </Box>
             </Box>
-            <Box className={selectedValue==="female"? classes.genderButtonSelected : classes.genderButton} fontSize={14} fontWeight={700} color={'#686868'}>
-                <input name="gender" type="radio" value="female" className={classes.input} ref={register} checked={selectedValue==="female"} onChange={handleChange}/>
-                <p className={classes.label}>女性</p>
-            </Box>
-            <Box className={selectedValue==="other"? classes.genderButtonSelected : classes.genderButton}  fontSize={14} fontWeight={700} color={'#686868'}>
-                <input name="gender" type="radio" value="other" className={classes.input} ref={register} checked={selectedValue==="other"} onChange={handleChange}/>
-                <p className={classes.label}>その他</p>
-            </Box>
-        </Box>
+        </div>
+
     );
 }
 
