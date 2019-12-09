@@ -6,23 +6,23 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles({
     selectBoxGroup: {
-        width: '25%',
-        maxWidth: '25%',
-        display:'inline-block',
+        width: '40%',
+        maxWidth: '40%',
+        display:'flex',
         height: '40px',
         marginRight: '10px'
     },
     selectBox: {
-        display:'inline-block',
         fontSize: '14px',
-        width: '100px'
+        // width: '30%'
+        'flex-grow': 5
     },
     selectInput: {
         display:'flex',
         color: '#686868'
     },
     selectInputLabel: {
-        display:'inline-block',
+        // display:'inline-block',
         alignContent: 'left',
         alignItems: 'left',
         verticalAlign:'10px',
@@ -41,7 +41,7 @@ function BirthdayYearSelectBox(props) {
     }, [name, register]);
     return (
             <Box className={classes.selectBoxGroup}>
-                <Select className={classes.selectBox} onChange={handleChange} value={selectValue}>
+                <Select className={classes.selectBox} onChange={handleChange} value={selectValue} autoWidth={true}>
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>

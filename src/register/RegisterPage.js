@@ -72,9 +72,10 @@ const useStyles = makeStyles({
         display:'inline-block',
     },
     birthdaySelectGroup: {
-        width: '75%',
-        maxWidth: '75%',
-        textAlign: 'left'
+        width: '80%',
+        maxWidth: '100%',
+        textAlign: 'left',
+        display: 'flex',
     },
     inputText: {
         width: '75%',
