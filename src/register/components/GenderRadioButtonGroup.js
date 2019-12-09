@@ -17,7 +17,11 @@ const useStyles = makeStyles({
         // 'margin-right': '20px',
     },
     genderButton: {
-        display:'inline-block',
+        // display:'inline-block',
+        display:'flex',
+        'flex-direction': 'row',
+        'justify-content': 'center', /* 子要素をflexboxにより中央に配置する */
+        'align-items': 'center',  /* 子要素をflexboxにより中央に配置する */
         width: '31%',
         maxWidth: '31%',
         borderBottom: 'solid 1px #7d7d7d',
@@ -27,10 +31,14 @@ const useStyles = makeStyles({
         borderTop: 'solid 1px #7d7d7d',
         height: '40px',
         marginRight: '10px',
-        backgroundColor: "white"
+        backgroundColor: "white",
+        'font-size': '12px'
     },
     genderButtonSelected: {
-        display:'inline-block',
+        display:'flex',
+        'flex-direction': 'row',
+        'justify-content': 'center', /* 子要素をflexboxにより中央に配置する */
+        'align-items': 'center',  /* 子要素をflexboxにより中央に配置する */
         width: '31%',
         maxWidth: '31%',
         borderRadius: '4px',
@@ -38,15 +46,7 @@ const useStyles = makeStyles({
         marginRight: '10px',
         background: 'linear-gradient(135deg, #2efdf7, #0f8bfd)',
         color: "white",
-    },
-    input: {
-        marginTop: '0px'
-    },
-    label: {
-        marginLeft: '10px',
-        display:'inline-block',
-        height: '40px',
-        marginTop: '10px'
+        'font-size': '14px'
     }
 });
 
@@ -62,15 +62,16 @@ function GenderRadioButtonGroup(props) {
             <Box fontSize={12} fontWeight={700} className={classes.genderButtonGroup}>
                 <Box className={selectedValue==="male"? classes.genderButtonSelected : classes.genderButton} fontSize={14} fontWeight={700} color={'#686868'}>
                     <input name="gender" type="radio" value="male" className={classes.input} ref={register} checked={selectedValue==="male"} onChange={handleChange}/>
-                    <p className={classes.label}>男性</p>
+                    {/*<p className={classes.label}>男性</p>*/}
+                    <div>男性</div>
                 </Box>
                 <Box className={selectedValue==="female"? classes.genderButtonSelected : classes.genderButton} fontSize={14} fontWeight={700} color={'#686868'}>
                     <input name="gender" type="radio" value="female" className={classes.input} ref={register} checked={selectedValue==="female"} onChange={handleChange}/>
-                    <p className={classes.label}>女性</p>
+                    <div>女性</div>
                 </Box>
                 <Box className={selectedValue==="other"? classes.genderButtonSelected : classes.genderButton}  fontSize={14} fontWeight={700} color={'#686868'}>
                     <input name="gender" type="radio" value="other" className={classes.input} ref={register} checked={selectedValue==="other"} onChange={handleChange}/>
-                    <p className={classes.label}>その他</p>
+                    <div>その他</div>
                 </Box>
             </Box>
         </div>
