@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
+import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles({
     sdPannel: {
@@ -105,12 +106,15 @@ const useStyles = makeStyles({
         // 'direction': 'ltr',
     },
 
-    icon: {
+    iconButton: {
         'position': 'relative',
+        'font-size': '20px',
+    },
+
+    icon: {
         'color': '#dfdfdf',
         'font-size': '20px',
     }
-
 
 });
 
@@ -121,10 +125,14 @@ function CompareImage(props) {
         <div className={classes.sdPannel}>
             <img src="https://storage.googleapis.com/production-os-assets/assets/24e1851f-25ac-4b52-96a4-467073e181e9" className={classes.sd} />
             <div className={classes.rightIconDiv} onClick={magnify}>
-                <SearchIcon className={classes.icon}/>
+                <IconButton  className={classes.iconButton}>
+                    <SearchIcon className={classes.icon}/>
+                </IconButton>
             </div>
             <div className={classes.leftIconDiv} onClick={magnify}>
-                <SearchIcon className={classes.icon}/>
+                <IconButton  className={classes.iconButton}>
+                    <SearchIcon className={classes.icon}/>
+                </IconButton>
             </div>
         </div>
     );

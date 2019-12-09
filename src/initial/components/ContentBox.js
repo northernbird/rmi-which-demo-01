@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import UserInfoBar from './user/UserInfoBar'
 import TitleBar from './TitleBar'
 import CompareImage from './CompareImage'
-import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles({
     sd: {
@@ -76,7 +75,6 @@ function ContentBox(props) {
             <UserInfoBar/>
             <TitleBar label={'ジャケットどっちが良い？'}/>
             <CompareImage/>
-            {/*<SearchIcon className={classes.searchSd}>star</SearchIcon>*/}
         </div>
     );
 }
