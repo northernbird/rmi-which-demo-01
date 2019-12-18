@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import UserInfoBar from './user/UserInfoBar'
+import UserInfoBar from './UserInfoBar'
 import TitleBar from './TitleBar'
 import CompareImage from './CompareImage'
 
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
         'flex': 'none',
         'flex-direction': 'row',
         'flex-wrap': 'wrap',
-        'height': '465px',
+        'height': '80%',
         'margin': '25px 0px 0px 0px',
         'overflow-x': 'hidden',
         'overflow-y': 'auto',

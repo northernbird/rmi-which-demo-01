@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from "@material-ui/core/IconButton";
+import SelectPannel from "./ImageSelectPannel";
 
 const useStyles = makeStyles({
     sdPannel: {
@@ -10,13 +11,32 @@ const useStyles = makeStyles({
         width: '100%',
         'justify-content': 'center',
     },
+    immagePannel: {
+        'flex': 'none',
+        'height': 'auto',
+        'width': '95%',
+        'max-width': '95%',
+        'z-index': '0',
+        'pointer-events': 'all',
+        'flex-wrap': 'nowrap',
+        '-webkit-overflow-scrolling': 'touch',
+        'display': 'flex',
+        'position': 'relative',
+        '-webkit-box-orient': 'vertical',
+        '-webkit-box-direction': 'normal',
+        'flex-direction': 'column',
+        'align-content': 'center',
+        '-webkit-box-align': 'center',
+        'align-items': 'center',
+        'overflow': 'hidden'
+    },
     sd: {
         'border-radius': '6px',
         'box-shadow': '5px 5px 5px 0px rgba(0,0,0,0.2)',
         'flex': 'none',
         'height': 'auto',
-        'width': '90%',
-        'max-width': '90%',
+        'width': '95%',
+        'max-width': '95%',
         'z-index': '0',
         'pointer-events': 'all',
         'flex-wrap': 'nowrap',
@@ -123,7 +143,9 @@ function CompareImage(props) {
     const magnify = () => alert("AAA")
     return (
         <div className={classes.sdPannel}>
-            <img src="https://storage.googleapis.com/production-os-assets/assets/24e1851f-25ac-4b52-96a4-467073e181e9" className={classes.sd} />
+            <div className={classes.immagePannel}>
+                <img src="https://storage.googleapis.com/production-os-assets/assets/24e1851f-25ac-4b52-96a4-467073e181e9" className={classes.sd}/>
+            </div>
             <div className={classes.rightIconDiv} onClick={magnify}>
                 <IconButton  className={classes.iconButton}>
                     <SearchIcon className={classes.icon}/>
