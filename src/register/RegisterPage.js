@@ -40,8 +40,8 @@ const useStyles = makeStyles({
         maxWidth: '100%',
     },
     inputLabel: {
-        width: '75%',
-        maxWidth: '75%',
+        width: '80%',
+        maxWidth: '80%',
         display:'inline-block',
         marginTop: '25px',
         alignContent: 'left',

@@ -144,6 +144,7 @@ function CompareImage(props) {
     return (
         <div className={classes.sdPannel}>
             <div className={classes.immagePannel}>
+                <SelectPannel/>
                 <img src="https://storage.googleapis.com/production-os-assets/assets/24e1851f-25ac-4b52-96a4-467073e181e9" className={classes.sd}/>
             </div>
             <div className={classes.rightIconDiv} onClick={magnify}>

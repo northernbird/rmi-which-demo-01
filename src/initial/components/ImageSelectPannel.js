@@ -12,13 +12,15 @@ const useStyles = makeStyles({
         'flex-flow': 'row nowrap',
         'height': '40px',
         'justify-content': 'space-around',
-        'position': 'relative',
-        'left': 'auto',
-        'right': '50%',
+        'position': 'absolute',
+        'left': '0',
+        'right': '0',
+        'margin': 'auto',
         'bottom': '50%',
         'top': 'auto',
         'width': '100px',
         'max-width': '100%',
+        'z-index': '1',
     },
 });
 
