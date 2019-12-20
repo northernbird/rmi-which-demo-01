@@ -2,7 +2,8 @@ import IconButton from "@material-ui/core/IconButton";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import React from "react";
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import React, { useState } from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -34,27 +35,35 @@ const useStyles = makeStyles({
     },
     favouriteIconDiv: {
         'margin': 'auto',
+        'font-size': '6vw',
+        'margin-top': '5px'
+    },
+    unselected: {
         'font-size': '5vw',
-    }
-    ,
-    test: {
+    },
+    selected: {
         'font-size': '5vw',
+        'color': 'red'
     }
 });
 
 function ImageSelectPannel(props) {
+    const [selected, setSelected] = useState(false);
     const classes = useStyles()
-    const magnify = () => alert("AAA")
+    const onClick = () =>{
+        alert("AAA")
+        setSelected(true)
+    }
     return (
         <div className={classes.pannel}>
             <IconButton  className={classes.iconButton}>
-                <ArrowBackIosIcon className={classes.icon}/>
+                <ArrowBackIosIcon onClick={onClick} className={classes.icon}/>
             </IconButton>
             <div className={classes.favouriteIconDiv}>
-                <FavoriteBorderIcon className={classes.test}/>
+                {selected? <FavoriteIcon className={classes.selected}/>: <FavoriteBorderIcon className={classes.unselected}/>}
             </div>
             <IconButton  className={classes.iconButton}>
-                <ArrowForwardIosIcon className={classes.icon}/>
+                <ArrowForwardIosIcon onClick={onClick} className={classes.icon}/>
             </IconButton>
         </div>
     );
