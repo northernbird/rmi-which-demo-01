@@ -48,7 +48,7 @@ function FooterBox(props) {
     const classes = useStyles()
     return (
         <div className={classes.flexPanel}>
-            <SubmitButton label={'スタート'} onClick={onClick}/>
+            <SubmitButton label={'スタート'} onClick={onClick} test={true}/>
         </div>
     );
 }

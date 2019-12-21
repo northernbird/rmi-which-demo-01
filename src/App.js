@@ -1,8 +1,8 @@
 import './App.css'
 import React from 'react';
-import WelcomePage from './welcome/WelcomePage';
-import RegisterPage from './register/RegisterPage';
-import InitialPage from './initial/InitialPage';
+import WelcomePage from './ui/welcome/WelcomePage';
+import RegisterPage from './ui/register/RegisterPage';
+import InitialPage from './ui/initial/InitialPage';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';

@@ -5,6 +5,9 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import React, { useState } from 'react';
 import {makeStyles} from "@material-ui/core/styles";
+import { finishTestQuestion } from '../../../actions'
+import { connect } from 'react-redux'
+
 
 const useStyles = makeStyles({
     pannel: {
@@ -47,13 +50,20 @@ const useStyles = makeStyles({
     }
 });
 
-function ImageSelectPannel(props) {
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    onClick: () => {
+        alert("AAA")
+        dispatch(finishTestQuestion(false))
+    }
+})
+
+function ImageSelectPannel({onClick}) {
     const [selected, setSelected] = useState(false);
     const classes = useStyles()
-    const onClick = () =>{
-        alert("AAA")
-        setSelected(true)
-    }
+    // const onClick = () =>{
+    //     alert("AAA")
+    //     setSelected(true)
+    // }
     return (
         <div className={classes.pannel}>
             <IconButton  className={classes.iconButton}>
@@ -69,4 +79,10 @@ function ImageSelectPannel(props) {
     );
 }
 
-export default ImageSelectPannel;
+// export default ImageSelectPannel;
+
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(ImageSelectPannel)
