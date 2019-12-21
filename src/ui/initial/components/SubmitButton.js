@@ -21,7 +21,6 @@ const useStyles = makeStyles({
 });
 
 const mapStateToProps = (state) => {
-    alert(JSON.stringify(state))
     return {
         isSelected: state.finishTestQuestion
     }
@@ -31,10 +30,7 @@ function SubmitButton(props) {
     const { onClick, label, isSelected } = props
     const classes = useStyles();
     return (
-        // <Button className={classes.button} onClick={onClick}  disabled={true}>
        <Button className={classes.button} onClick={onClick}  disabled={isSelected}>
-        {/*<Button className={classes.button} onClick={onClick}  disabled={props.test}>*/}
-        {/*<Button className={classes.button} onClick={onClick}  disabled={props.test}>*/}
             {label}
         </Button>
     );
