@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from "@material-ui/core/IconButton";
 import SelectPannel from "./ImageSelectPannel";
+import ResultBox from "./ResultBox";
+import { connect } from 'react-redux'
+
 
 const useStyles = makeStyles({
     sdPannel: {
@@ -95,13 +98,25 @@ const useStyles = makeStyles({
 
 });
 
+const mapStateToProps = (state) => {
+    alert(JSON.stringify(state))
+    return {
+        isSelected: state.finishTestQuestion
+    }
+}
+
 function CompareImage(props) {
     const classes = useStyles()
     const magnify = () => alert("AAA")
     return (
         <div className={classes.sdPannel}>
             <div className={classes.immagePannel}>
-                <SelectPannel/>
+                {(() => {
+                    if (props.isSelected) {
+                        return  <SelectPannel/>;
+                    }
+                })()}
+
                 <img src="https://storage.googleapis.com/production-os-assets/assets/24e1851f-25ac-4b52-96a4-467073e181e9" className={classes.sd}/>
             </div>
             <div className={classes.rightIconDiv} onClick={magnify}>
@@ -114,8 +129,14 @@ function CompareImage(props) {
                     <SearchIcon className={classes.icon}/>
                 </IconButton>
             </div>
+            <ResultBox/>
         </div>
     );
 }
 
-export default CompareImage;
+// export default CompareImage;
+
+export default connect(
+    mapStateToProps,
+    null
+)(CompareImage)
