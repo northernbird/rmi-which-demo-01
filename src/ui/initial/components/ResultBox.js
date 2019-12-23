@@ -40,6 +40,14 @@ const useStyles = makeStyles({
         'display': 'flex',
         'flex-flow': 'row nowrap'
     },
+    resultHeader: {
+        'position': 'absolute',
+        'left': '0',
+        'right': '0',
+        'margin': 'auto',
+        'width': '10%',
+        'background-color': 'transparent'
+    },
     rightPannel: {
         'background': 'rgba(256, 256, 256, 256)',
         // Width Percent should be dynamically generated
@@ -67,8 +75,9 @@ function ResultBox({isSelected}) {
     const classes = useStyles()
     if (!isSelected) {
         return <div className={classes.visiblePannel}>
-            <div className={classes.rightPannel}>AAA</div>
-            <div className={classes.leftPannel}>BBB</div>
+            <div className={classes.resultHeader}>Title</div>
+            <div className={classes.rightPannel}></div>
+            <div className={classes.leftPannel}></div>
         </div>;
     } else {
         return null;
