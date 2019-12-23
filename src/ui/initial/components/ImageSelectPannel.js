@@ -60,20 +60,22 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 function ImageSelectPannel({isSelected, onClick}) {
     const [selected, setSelected] = useState(false);
     const classes = useStyles()
-    // const onClick = () =>{
-    //     alert("AAA")
-    //     setSelected(true)
-    // }
+    const onMouseEnter = () =>{
+        setSelected(true)
+    }
+    const onMouseLeave = () =>{
+        setSelected(false)
+    }
     if (isSelected) {
         return (
             <div className={classes.pannel}>
-                <IconButton  className={classes.iconButton}>
+                <IconButton  className={classes.iconButton} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                     <ArrowBackIosIcon onClick={onClick} className={classes.icon}/>
                 </IconButton>
                 <div className={classes.favouriteIconDiv}>
                     {selected? <FavoriteIcon className={classes.selected}/>: <FavoriteBorderIcon className={classes.unselected}/>}
                 </div>
-                <IconButton  className={classes.iconButton}>
+                <IconButton  className={classes.iconButton} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                     <ArrowForwardIosIcon onClick={onClick} className={classes.icon}/>
                 </IconButton>
             </div>
