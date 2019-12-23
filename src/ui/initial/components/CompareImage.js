@@ -5,6 +5,8 @@ import IconButton from "@material-ui/core/IconButton";
 import SelectPannel from "./ImageSelectPannel";
 import ResultBox from "./ResultBox";
 import { connect } from 'react-redux'
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 
 const useStyles = makeStyles({
@@ -99,24 +101,18 @@ const useStyles = makeStyles({
 });
 
 const mapStateToProps = (state) => {
-    alert(JSON.stringify(state))
     return {
         isSelected: state.finishTestQuestion
     }
 }
 
-function CompareImage(props) {
+function CompareImage({isSelected}) {
     const classes = useStyles()
     const magnify = () => alert("AAA")
     return (
         <div className={classes.sdPannel}>
             <div className={classes.immagePannel}>
-                {(() => {
-                    if (props.isSelected) {
-                        return  <SelectPannel/>;
-                    }
-                })()}
-
+                <SelectPannel isSelected={isSelected}/>
                 <img src="https://storage.googleapis.com/production-os-assets/assets/24e1851f-25ac-4b52-96a4-467073e181e9" className={classes.sd}/>
             </div>
             <div className={classes.rightIconDiv} onClick={magnify}>

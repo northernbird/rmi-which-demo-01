@@ -57,26 +57,32 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     }
 })
 
-function ImageSelectPannel({onClick}) {
+function ImageSelectPannel({isSelected, onClick}) {
     const [selected, setSelected] = useState(false);
     const classes = useStyles()
     // const onClick = () =>{
     //     alert("AAA")
     //     setSelected(true)
     // }
-    return (
-        <div className={classes.pannel}>
-            <IconButton  className={classes.iconButton}>
-                <ArrowBackIosIcon onClick={onClick} className={classes.icon}/>
-            </IconButton>
-            <div className={classes.favouriteIconDiv}>
-                {selected? <FavoriteIcon className={classes.selected}/>: <FavoriteBorderIcon className={classes.unselected}/>}
+    if (isSelected) {
+        return (
+            <div className={classes.pannel}>
+                <IconButton  className={classes.iconButton}>
+                    <ArrowBackIosIcon onClick={onClick} className={classes.icon}/>
+                </IconButton>
+                <div className={classes.favouriteIconDiv}>
+                    {selected? <FavoriteIcon className={classes.selected}/>: <FavoriteBorderIcon className={classes.unselected}/>}
+                </div>
+                <IconButton  className={classes.iconButton}>
+                    <ArrowForwardIosIcon onClick={onClick} className={classes.icon}/>
+                </IconButton>
             </div>
-            <IconButton  className={classes.iconButton}>
-                <ArrowForwardIosIcon onClick={onClick} className={classes.icon}/>
-            </IconButton>
-        </div>
-    );
+        );
+    } else {
+        return null;
+    }
+
+
 }
 
 // export default ImageSelectPannel;

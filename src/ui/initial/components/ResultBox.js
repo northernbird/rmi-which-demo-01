@@ -18,6 +18,8 @@ const useStyles = makeStyles({
         'width': '200px',
         'max-width': '100%',
         'visibility':'hidden',
+        'display': 'flex',
+        'flex-flow': 'row nowrap'
     },
 
     visiblePannel: {
@@ -35,7 +37,23 @@ const useStyles = makeStyles({
         'width': '200px',
         'max-width': '100%',
         'visibility':'visible',
+        'display': 'flex',
+        'flex-flow': 'row nowrap'
     },
+    rightPannel: {
+        'background': 'rgba(256, 256, 256, 256)',
+        // Width Percent should be dynamically generated
+        'width': '57%',
+        'height': '50px',
+        'border-radius': '16px',
+    },
+    leftPannel: {
+        'background': 'rgba(187, 187, 187, 0.7)',
+        // Width Percent should be dynamically generated
+        'width': '43%',
+        'height': '50px',
+        'border-radius': '16px',
+    }
 });
 
 const mapStateToProps = (state) => {
@@ -48,9 +66,12 @@ const mapStateToProps = (state) => {
 function ResultBox({isSelected}) {
     const classes = useStyles()
     if (!isSelected) {
-        return <div className={classes.visiblePannel}>AAAAA</div>;
+        return <div className={classes.visiblePannel}>
+            <div className={classes.rightPannel}>AAA</div>
+            <div className={classes.leftPannel}>BBB</div>
+        </div>;
     } else {
-        return <div className={classes.pannel}>BBBBBB</div>;
+        return null;
     }
 
 }
