@@ -85,7 +85,7 @@ function ResultBox({isSelected}) {
     const classes = useStyles()
     if (!isSelected) {
         return <div className={classes.visiblePannel}>
-            <div className={classes.resultHeader}>Title</div>
+            <div className={classes.resultHeader}>All</div>
             <div className={classes.leftPannel}>
                 <span className={classes.leftPannelText}>57%</span>
             </div>
