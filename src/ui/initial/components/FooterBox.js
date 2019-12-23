@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import SubmitButton from './SubmitButton';
+import { withRouter } from 'react-router';
 
 const useStyles = makeStyles({
     flexPanel: {
@@ -41,9 +42,11 @@ const useStyles = makeStyles({
     },
 });
 
-function FooterBox(props) {
+function FooterBox({history}) {
     const onClick = () => {
         alert('Hello')
+        let path = '/register'
+        history.push(path)
     }
     const classes = useStyles()
     return (
@@ -53,4 +56,4 @@ function FooterBox(props) {
     );
 }
 
-export default FooterBox;
+export default withRouter(FooterBox);
