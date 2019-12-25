@@ -44,8 +44,7 @@ const useStyles = makeStyles({
 
 function FooterBox({history}) {
     const onClick = () => {
-        alert('Hello')
-        let path = '/register'
+        let path = '/list'
         history.push(path)
     }
     const classes = useStyles()
