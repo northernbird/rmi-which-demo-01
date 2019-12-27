@@ -4,6 +4,8 @@ import WelcomePage from './ui/welcome/WelcomePage';
 import RegisterPage from './ui/register/RegisterPage';
 import InitialPage from './ui/initial/InitialPage';
 import WhichList from './ui/list/WhichList';
+import AddQuestion from './ui/add/AddQuestion';
+
 
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -37,7 +39,7 @@ function App() {
                         <WhichList/>
                     </Route>
                     <Route path="/add">
-                        <WelcomePage/>
+                        <AddQuestion/>
                     </Route>
                 </Switch>
             </BrowserRouter>

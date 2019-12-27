@@ -53,7 +53,7 @@ const useStyles = makeStyles({
 function Footer({history}) {
     const classes = useStyles()
     const onClick = () => {
-        let path = '/register'
+        let path = '/add'
         history.push(path)
     };
     return (
