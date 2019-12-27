@@ -7,6 +7,7 @@ import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
+import { withRouter } from 'react-router';
 
 const useStyles = makeStyles({
     pannel: {
@@ -49,8 +50,12 @@ const useStyles = makeStyles({
 
 });
 
-function Footer(props) {
+function Footer({history}) {
     const classes = useStyles()
+    const onClick = () => {
+        let path = '/register'
+        history.push(path)
+    };
     return (
         <div className={classes.pannel}>
             <IconButton>
@@ -61,7 +66,7 @@ function Footer(props) {
             </IconButton>
             <IconButton>
                 <Fab color="secondary" className={classes.postFormButton} >
-                    <AddIcon />
+                    <AddIcon onClick={onClick}/>
                 </Fab>
             </IconButton>
             <IconButton>
@@ -74,4 +79,4 @@ function Footer(props) {
     );
 }
 
-export default Footer
+export default withRouter(Footer);

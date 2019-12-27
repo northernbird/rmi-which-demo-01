@@ -36,6 +36,9 @@ function App() {
                     <Route path="/list">
                         <WhichList/>
                     </Route>
+                    <Route path="/add">
+                        <WelcomePage/>
+                    </Route>
                 </Switch>
             </BrowserRouter>
         </ThemeProvider>
