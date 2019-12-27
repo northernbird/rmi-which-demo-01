@@ -5,6 +5,8 @@ import IconButton from "@material-ui/core/IconButton";
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
+import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
+import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 
 const useStyles = makeStyles({
     pannel: {
@@ -61,6 +63,12 @@ function Footer(props) {
                 <Fab color="secondary" className={classes.postFormButton} >
                     <AddIcon />
                 </Fab>
+            </IconButton>
+            <IconButton>
+                <NotificationsOutlinedIcon className={classes.button} />
+            </IconButton>
+            <IconButton>
+                <AccountCircleOutlinedIcon className={classes.button} />
             </IconButton>
         </div>
     );
