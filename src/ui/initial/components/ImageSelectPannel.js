@@ -52,7 +52,6 @@ const useStyles = makeStyles({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClick: () => {
-        alert("AAA")
         dispatch(finishTestQuestion(false))
     }
 })

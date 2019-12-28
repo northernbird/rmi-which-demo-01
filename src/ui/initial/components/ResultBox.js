@@ -78,7 +78,6 @@ const useStyles = makeStyles({
 });
 
 const mapStateToProps = (state) => {
-    alert(JSON.stringify(state))
     return {
         isSelected: state.finishTestQuestion
     }
