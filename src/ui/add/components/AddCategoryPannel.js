@@ -1,44 +1,61 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from "@material-ui/core/Box";
+import Fab from '@material-ui/core/Fab';
+import AddIcon from "@material-ui/icons/Add";
+import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles({
     pannel: {
-        alignContent: 'center',
-        alignItems: 'center',
-        background: '#ffffff',
-        marginTop: '230px',
-        marginRight: '0px',
-        marginBottom: '0px',
-        marginLeft: '0px',
-        width: '100%',
-        maxWidth: '100%',
-        height: '380px',
-        textAlign: 'center',
+        'display': 'flex',
+        'flex-flow': 'row nowrap',
+        'justify-content': 'space-around',
+        'height': '13vh',
+        'align-items': 'center',
+
     },
-    title: {
-        textAlign: 'center',
-        width: 'auto',
-        maxWidth: '100%',
+    imagePannel: {
+        'align-content': 'center',
+        'align-items': 'center',
+        'background': '#ffffff',
+        'border': 'solid 1px #959595',
+        'border-radius': '40px',
+        'height': '40px',
+        'justify-content': 'center',
+        'padding': '0px 0px 0px 0px',
+        'width': '40px',
+        'max-width': '100%',
+        'display':'flex',
+        'flex-flow': 'row nowrap',
     },
-    subTitle: {
-        marginTop: '46px',
-        marginRight: '0px',
-        marginBottom: '0px',
-        marginLeft: '0px',
-    }
+    image: {
+        position: 'relative',
+        width: '60%'
+    },
+
+
 });
 
-function AddCategoryPannel({history}) {
+function AddCategoryPannel() {
     const classes = useStyles()
 
-    const routeChange = () => {
-        let path = '/register'
-        history.push(path)
-    }
-
     return (
- <div>TODO</div>
+ <div className={classes.pannel}>
+     <div className={classes.imagePannel} >
+         <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/72de7e7c-ac10-41ce-8e3b-e9054ae03635"/>
+     </div>
+     <div className={classes.imagePannel} >
+         <img className={classes.image} src="/content-cut.png"/>
+     </div>
+     <div className={classes.imagePannel} >
+         <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/1001baa8-953d-40ad-9ca5-29a30ecc3d3a"/>
+     </div>
+     <div className={classes.imagePannel} >
+         <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/7a42776e-bbcf-4bb2-8f9c-8fd3dac31e27"/>
+     </div>
+     <div className={classes.imagePannel} >
+         <p>etc..</p>
+     </div>
+ </div>
     );
 }
 
