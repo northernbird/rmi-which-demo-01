@@ -6,6 +6,7 @@ import AddCategoryPannel from './components/AddCategoryPannel'
 import AddPhotoPannel from './components/AddPhotoPannel'
 import AddAgePannel from './components/AddAgePannel'
 import SubmitQuestionButton from './components/SubmitQuestionButton'
+import Footer from './components/Footer'
 
 
 const useStyles = makeStyles({
@@ -13,6 +14,10 @@ const useStyles = makeStyles({
         display: 'flex',
         'flex-flow': 'column nowrap',
         'margin': '20px 0px 10px 0px',
+        'overflow-x': 'auto',
+        'overflow-y': 'hidden',
+        //TODO  Why height doesn't work with percentage
+        'height': '666px',
     }
 });
 
@@ -25,12 +30,15 @@ function AddQuestion({history}) {
     }
 
     return (
-        <Typography component={'div'} className={classes.pannel}>
-            <InputQuestionTextPannel/>
-            <AddPhotoPannel/>
-            <AddCategoryPannel/>
-            <AddAgePannel/>
-            <SubmitQuestionButton/>
+        <Typography component={'div'}>
+            <div className={classes.pannel}>
+                <InputQuestionTextPannel/>
+                <AddPhotoPannel/>
+                <AddCategoryPannel/>
+                <AddAgePannel/>
+              <SubmitQuestionButton/>
+            </div>
+            <Footer/>
         </Typography>
     );
 }
