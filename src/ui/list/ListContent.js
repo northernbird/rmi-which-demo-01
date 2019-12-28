@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import ContentBox from '../initial/components/ContentBox';
+
 
 const useStyles = makeStyles({
     pannel: {
@@ -23,7 +25,7 @@ function Footer(props) {
     const classes = useStyles()
     return (
         <div>
-            TODO List of questionnaires
+            <ContentBox/>
         </div>
     );
 }
