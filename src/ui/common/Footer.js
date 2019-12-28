@@ -12,38 +12,17 @@ import { withRouter } from 'react-router';
 const useStyles = makeStyles({
     pannel: {
         position: 'fixed',
-        width: '100%',
+        width: '95%',
         display: 'flex',
         bottom: '0px',
         background: '#FFFFFF',
-        'justify-content': 'space-around',
+        'justify-content': 'center',
     },
-    // footer: {
-    //     display: 'flex',
-    //     position: 'absolute',
-    //     bottom: '0px',
-    //     top: 'auto',
-    //     height: '20%',
-    //     background: '#FFFFFF',
-    // },
+    buttonPannel: {
+        position: 'relative',
+    },
     button: {
         fontSize: 40,
-    },
-    submitButton : {
-        'align-content': 'center',
-        'align-items': 'center',
-        'background': 'linear-gradient(135deg, #2efdf7, #0f8bfd)',
-        'border-radius': '50%',
-        'box-shadow': '0 2px 5px rgba(0,0,0,0.2)',
-        'flex': 'none',
-        'flex-direction': 'column',
-        'flex-wrap': 'nowrap',
-        'height': '60px',
-        'justify-content': 'center',
-        'margin': '5px 0px 0px 0px',
-        'padding': '0px 0px 0px 0px',
-        'width': '50px',
-        // 'max-width': '100%'
     },
     postFormButton: {
         'background': 'linear-gradient(135deg, #2efdf7, #0f8bfd)',
@@ -60,21 +39,21 @@ function Footer({history}) {
     };
     return (
         <div className={classes.pannel}>
-            <IconButton>
+            <IconButton className={classes.buttonPannel}>
                 <HomeRoundedIcon className={classes.button} />
             </IconButton>
-            <IconButton>
+            <IconButton className={classes.buttonPannel}>
                 <BookmarkBorderIcon className={classes.button} />
             </IconButton>
-            <IconButton>
+            <IconButton className={classes.buttonPannel}>
                 <Fab color="secondary" className={classes.postFormButton} >
                     <AddIcon onClick={onClick}/>
                 </Fab>
             </IconButton>
-            <IconButton>
+            <IconButton className={classes.buttonPannel}>
                 <NotificationsOutlinedIcon className={classes.button} />
             </IconButton>
-            <IconButton>
+            <IconButton className={classes.buttonPannel}>
                 <AccountCircleOutlinedIcon className={classes.button} />
             </IconButton>
         </div>
