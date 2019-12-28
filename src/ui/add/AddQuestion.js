@@ -5,6 +5,7 @@ import InputQuestionTextPannel from './components/InputQuestionTextPannel'
 import AddCategoryPannel from './components/AddCategoryPannel'
 import AddPhotoPannel from './components/AddPhotoPannel'
 import AddAgePannel from './components/AddAgePannel'
+import SubmitQuestionButton from './components/SubmitQuestionButton'
 
 
 const useStyles = makeStyles({
@@ -29,10 +30,7 @@ function AddQuestion({history}) {
             <AddPhotoPannel/>
             <AddCategoryPannel/>
             <AddAgePannel/>
-            <div>
-                AddAgePannel
-                QuestionSubmitButton
-            </div>
+            <SubmitQuestionButton/>
         </Typography>
     );
 }
