@@ -5,21 +5,36 @@ import Box from "@material-ui/core/Box";
 const useStyles = makeStyles({
     pannel: {
         'display': 'flex',
-        'flex-flow': 'column nowrap',
+        'flex-flow': 'row nowrap',
+        'justify-content': 'space-around',
     },
+    photoPannel: {
+        'display': 'flex',
+        'align-content': 'center',
+        'align-items': 'center',
+        'background': '#f0f0f0',
+        'border': 'dashed 2px #959595',
+        'flex': 'none',
+        'flex-direction': 'column',
+        'flex-wrap': 'nowrap',
+        'height': '270px',
+        'justify-content': 'center',
+        'width': '45%',
+        'max-width': '45%',
+    }
 });
 
-function AddPhotoPannel({history}) {
+function InputQuestionTextPannel() {
     const classes = useStyles()
 
-    const routeChange = () => {
-        let path = '/register'
-        history.push(path)
-    }
-
     return (
-        <div>TODO</div>
+        <div className={classes.pannel}>
+            <div className={classes.photoPannel}>
+            </div>
+            <div className={classes.photoPannel}>
+            </div>
+        </div>
     );
 }
 
-export default AddPhotoPannel;
+export default InputQuestionTextPannel;
