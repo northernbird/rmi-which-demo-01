@@ -16,6 +16,7 @@ const useStyles = makeStyles({
         display: 'flex',
         bottom: '0px',
         background: '#FFFFFF',
+        'justify-content': 'space-around',
     },
     // footer: {
     //     display: 'flex',
