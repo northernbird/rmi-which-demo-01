@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import InputQuestionTextPannel from './components/InputQuestionTextPannel'
 import AddCategoryPannel from './components/AddCategoryPannel'
 import AddPhotoPannel from './components/AddPhotoPannel'
+import AddAgePannel from './components/AddAgePannel'
 
 
 const useStyles = makeStyles({
@@ -27,6 +28,7 @@ function AddQuestion({history}) {
             <InputQuestionTextPannel/>
             <AddPhotoPannel/>
             <AddCategoryPannel/>
+            <AddAgePannel/>
             <div>
                 AddAgePannel
                 QuestionSubmitButton
