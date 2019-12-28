@@ -6,7 +6,7 @@ import AddCategoryPannel from './components/AddCategoryPannel'
 import AddPhotoPannel from './components/AddPhotoPannel'
 import AddAgePannel from './components/AddAgePannel'
 import SubmitQuestionButton from './components/SubmitQuestionButton'
-import Footer from './components/Footer'
+import Footer from '../common/Footer'
 
 
 const useStyles = makeStyles({
@@ -17,7 +17,7 @@ const useStyles = makeStyles({
         'overflow-x': 'auto',
         'overflow-y': 'hidden',
         //TODO  Why height doesn't work with percentage
-        'height': '666px',
+        'height': '730px',
     }
 });
 

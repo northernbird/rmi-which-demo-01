@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Footer from './Footer';
+import Footer from '../common/Footer';
 import ListContent from './ListContent';
 import Header from './Header';
 
