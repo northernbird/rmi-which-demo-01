@@ -1,30 +1,16 @@
 import React from 'react';
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from '@material-ui/core/styles';
+import InputQuestionTextPannel from './components/InputQuestionTextPannel'
+import AddCategoryPannel from './components/AddCategoryPannel'
+import AddPhotoPannel from './components/AddPhotoPannel'
+
 
 const useStyles = makeStyles({
     pannel: {
-        alignContent: 'center',
-        alignItems: 'center',
-        background: '#ffffff',
-        marginTop: '230px',
-        marginRight: '0px',
-        marginBottom: '0px',
-        marginLeft: '0px',
-        width: '100%',
-        maxWidth: '100%',
-        height: '380px',
-        textAlign: 'center',
-    },
-    title: {
-        textAlign: 'center',
-        width: 'auto',
-        maxWidth: '100%',
-    },
-    subTitle: {
-        marginTop: '46px',
-        marginRight: '0px',
-        marginBottom: '0px',
-        marginLeft: '0px',
+        display: 'flex',
+        'flex-flow': 'column nowrap',
+        'margin': '20px 0px 10px 0px',
     }
 });
 
@@ -37,9 +23,15 @@ function AddQuestion({history}) {
     }
 
     return (
-        <div>
-            Hello World!!
-        </div>
+        <Typography component={'div'} className={classes.pannel}>
+            <InputQuestionTextPannel/>
+            <AddPhotoPannel/>
+            <AddCategoryPannel/>
+            <div>
+                AddAgePannel
+                QuestionSubmitButton
+            </div>
+        </Typography>
     );
 }
 
