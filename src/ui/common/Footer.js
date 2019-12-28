@@ -33,21 +33,25 @@ const useStyles = makeStyles({
 
 function Footer({history}) {
     const classes = useStyles()
-    const onClick = () => {
+    const createNewQuestion = () => {
         let path = '/add'
+        history.push(path)
+    };
+    const returnList = () => {
+        let path = '/list'
         history.push(path)
     };
     return (
         <div className={classes.pannel}>
             <IconButton className={classes.buttonPannel}>
-                <HomeRoundedIcon className={classes.button} />
+                <HomeRoundedIcon className={classes.button} onClick={returnList}/>
             </IconButton>
             <IconButton className={classes.buttonPannel}>
                 <BookmarkBorderIcon className={classes.button} />
             </IconButton>
             <IconButton className={classes.buttonPannel}>
                 <Fab color="secondary" className={classes.postFormButton} >
-                    <AddIcon onClick={onClick}/>
+                    <AddIcon onClick={createNewQuestion}/>
                 </Fab>
             </IconButton>
             <IconButton className={classes.buttonPannel}>
