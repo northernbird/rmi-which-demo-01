@@ -30,11 +30,11 @@ const useStyles = makeStyles({
 
 function InputQuestionTextPannel() {
 
-    const matches = useMediaQuery('(min-width:500px)');
+    const matches = useMediaQuery('(min-width:500px)')
 
     let props;
     if(matches) {
-        props = { height: '55%'};
+        props = { height: '50%'};
     } else {
         props = { height: '35%',};
     }

@@ -6,7 +6,7 @@ const useStyles = makeStyles({
         'display': 'flex',
         'flex-flow': 'row nowrap',
         'justify-content': 'center',
-        'height': '10vh',
+        'height': '60px',
         'align-items': 'center',
 
     },
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
         'display':'flex',
         'flex-flow': 'column nowrap',
         'align-items': 'center',
-        'width': '20%'
+        'width': '70px'
     },
     ageButton: {
         'align-content': 'center',

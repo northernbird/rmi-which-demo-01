@@ -7,22 +7,32 @@ import AddPhotoPannel from './components/AddPhotoPannel'
 import AddAgePannel from './components/AddAgePannel'
 import SubmitQuestionButton from './components/SubmitQuestionButton'
 import Footer from '../common/Footer'
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 
 const useStyles = makeStyles({
-    pannel: {
+    pannel: props => ({
         display: 'flex',
         'flex-flow': 'column nowrap',
         'margin': '20px 0px 10px 0px',
         'overflow-x': 'auto',
         'overflow-y': 'hidden',
         //TODO  Why height doesn't work with percentage
-        'height': '110vh',
-    }
+        'height': props.height,
+    })
 });
 
 function AddQuestion({history}) {
-    const classes = useStyles()
+
+    const matches = useMediaQuery('(max-height:570px)')
+
+    let props;
+    if(matches) {
+        props = { height: '120vh'};
+    } else {
+        props = { height: '100vh',};
+    }
+    const classes = useStyles(props)
 
     const routeChange = () => {
         let path = '/register'
