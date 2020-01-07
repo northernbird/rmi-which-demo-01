@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         display: 'flex',
         bottom: '0px',
         background: '#FFFFFF',
-        'justify-content': 'center',
+        'justify-content': 'space-around',
     },
     buttonPannel: {
         position: 'relative',
