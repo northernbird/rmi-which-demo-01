@@ -1,14 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from "@material-ui/core/Box";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles({
-    pannel: {
+    pannel: props=> ({
         'display': 'flex',
         'flex-flow': 'row nowrap',
         'justify-content': 'space-around',
-    },
-    photoPannel: {
+        'height': props.height,
+    }),
+    photoPannel: props=> ({
         'display': 'flex',
         'align-content': 'center',
         'align-items': 'center',
@@ -17,15 +18,27 @@ const useStyles = makeStyles({
         'flex': 'none',
         'flex-direction': 'column',
         'flex-wrap': 'nowrap',
-        'height': '270px',
+        'height': '100%',
         'justify-content': 'center',
         'width': '45%',
         'max-width': '45%',
-    }
+    }),
+    foo: props => ({
+        backgroundColor: props.backgroundColor,
+    }),
 });
 
 function InputQuestionTextPannel() {
-    const classes = useStyles()
+
+    const matches = useMediaQuery('(min-width:500px)');
+
+    let props;
+    if(matches) {
+        props = { height: '60%'};
+    } else {
+        props = { height: '35%',};
+    }
+    const classes = useStyles(props)
 
     return (
         <div className={classes.pannel}>

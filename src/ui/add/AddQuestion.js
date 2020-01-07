@@ -17,7 +17,7 @@ const useStyles = makeStyles({
         'overflow-x': 'auto',
         'overflow-y': 'hidden',
         //TODO  Why height doesn't work with percentage
-        'height': '730px',
+        'height': '110vh',
     }
 });
 
