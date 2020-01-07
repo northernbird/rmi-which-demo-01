@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 
 function AddQuestion({history}) {
 
-    const matches = useMediaQuery('(max-height:570px)')
+    const matches = useMediaQuery('(orientation: landscape) and (min-height: 740px), (max-height: 570px)')
 
     let props;
     if(matches) {

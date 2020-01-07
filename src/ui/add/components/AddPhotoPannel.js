@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 
 function InputQuestionTextPannel() {
 
-    const matches = useMediaQuery('(min-width:500px)')
+    const matches = useMediaQuery('(orientation: landscape)')
 
     let props;
     if(matches) {
