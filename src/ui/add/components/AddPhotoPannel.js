@@ -34,7 +34,7 @@ function InputQuestionTextPannel() {
 
     let props;
     if(matches) {
-        props = { height: '60%'};
+        props = { height: '55%'};
     } else {
         props = { height: '35%',};
     }

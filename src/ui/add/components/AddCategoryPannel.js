@@ -6,15 +6,19 @@ const useStyles = makeStyles({
         'display': 'flex',
         'flex-flow': 'row nowrap',
         'justify-content': 'center',
-        'height': '15vh',
+        'height': '100px',
         'align-items': 'center',
+        'margin-top': '20px',
 
     },
     categoryPannel: {
         'display':'flex',
         'flex-flow': 'column nowrap',
         'align-items': 'center',
-        'width': '30%'
+        'align-content': 'center',
+        'justify-content': 'center',
+        'width': '70px',
+        'height': '100%',
     },
     imagePannel: {
         'align-content': 'center',
