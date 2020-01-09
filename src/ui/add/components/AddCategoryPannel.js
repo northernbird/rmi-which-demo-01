@@ -15,9 +15,6 @@ const useStyles = makeStyles({
         '& input[type="radio"] + img': {
             cursor: 'pointer',
         },
-        '& input[type="radio"] ~ p': {
-            color: 'red',
-        },
         '& input[type="radio"]:checked + img': {
             color: 'red',
             outline: '2px solid #f00',
@@ -44,6 +41,7 @@ const useStyles = makeStyles({
         'width': '40px',
         'max-width': '100%',
         'display':'flex',
+        'flex-flow': 'column nowrap',
     },
     label: {
         'color': '#333',
@@ -69,30 +67,26 @@ function AddCategoryPannel() {
 
     return (
  <div className={classes.pannel}>
-     <div className={classes.categoryPannel}>
-         <div className={classes.imagePannel} >
-             <label>
-                <input type="radio" name="test" value="1" checked/>
-                 <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/72de7e7c-ac10-41ce-8e3b-e9054ae03635"/>
-             </label>
-         </div>
+     <label className={classes.categoryPannel}>
+         <span className={classes.imagePannel} >
+             <input type="radio" name="test" value="2"/>
+             <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/72de7e7c-ac10-41ce-8e3b-e9054ae03635"/>
+         </span>
          <p className={classes.label}>ファッション</p>
-     </div>
-     <div className={classes.categoryPannel}>
-         <div className={classes.imagePannel} >
-             <label>
-                 <input type="radio" name="test" value="2"/>
-                 <img className={classes.image} src="/content-cut.png"/>
-             </label>
-         </div>
+     </label>
+     <label className={classes.categoryPannel}>
+         <span className={classes.imagePannel} >
+             <input type="radio" name="test" value="2"/>
+             <img className={classes.image} src="/content-cut.png"/>
+         </span>
          <p className={classes.label}>ヘア</p>
-     </div>
-     <div className={classes.categoryPannel}>
-         <div className={classes.imagePannel} >
+     </label>
+     <label className={classes.categoryPannel}>
+         <span className={classes.imagePannel} >
              <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/1001baa8-953d-40ad-9ca5-29a30ecc3d3a"/>
-         </div>
+         </span>
          <p className={classes.label}>プレゼント</p>
-     </div>
+     </label>
      <div className={classes.categoryPannel}>
          <div className={classes.imagePannel} >
              <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/7a42776e-bbcf-4bb2-8f9c-8fd3dac31e27"/>
