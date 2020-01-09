@@ -15,9 +15,9 @@ const useStyles = makeStyles({
         '& input[type="radio"] + img': {
             cursor: 'pointer',
         },
-        '& input[type="radio"]:checked + img': {
-            color: 'red',
-            outline: '2px solid #f00',
+        '& input[type="radio"]:checked + span': {
+            border: 'solid 5px #959595',
+            background: '#e6ebe7',
         },
     },
     categoryPannel: {
@@ -68,37 +68,40 @@ function AddCategoryPannel() {
     return (
  <div className={classes.pannel}>
      <label className={classes.categoryPannel}>
+         <input type="radio" name="test" value="1"/>
          <span className={classes.imagePannel} >
-             <input type="radio" name="test" value="2"/>
              <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/72de7e7c-ac10-41ce-8e3b-e9054ae03635"/>
          </span>
          <p className={classes.label}>ファッション</p>
      </label>
      <label className={classes.categoryPannel}>
+         <input type="radio" name="test" value="2"/>
          <span className={classes.imagePannel} >
-             <input type="radio" name="test" value="2"/>
-             <img className={classes.image} src="/content-cut.png"/>
+             <img className={classes.image} src="https://www.materialui.co/materialIcons/content/content_cut_24px.svg"/>
          </span>
          <p className={classes.label}>ヘア</p>
      </label>
      <label className={classes.categoryPannel}>
+         <input type="radio" name="test" value="3"/>
          <span className={classes.imagePannel} >
              <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/1001baa8-953d-40ad-9ca5-29a30ecc3d3a"/>
          </span>
          <p className={classes.label}>プレゼント</p>
      </label>
-     <div className={classes.categoryPannel}>
-         <div className={classes.imagePannel} >
+     <label className={classes.categoryPannel}>
+         <input type="radio" name="test" value="4"/>
+         <span className={classes.imagePannel} >
              <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/7a42776e-bbcf-4bb2-8f9c-8fd3dac31e27"/>
-         </div>
+         </span>
          <p className={classes.label}>メイク</p>
-     </div>
-     <div className={classes.categoryPannel}>
-         <div className={classes.imagePannel} >
+     </label>
+     <label className={classes.categoryPannel}>
+         <input type="radio" name="test" value="5"/>
+         <span className={classes.imagePannel} >
              <p>etc..</p>
-         </div>
+         </span>
          <p className={classes.label}>その他</p>
-     </div>
+     </label>
  </div>
     );
 }
