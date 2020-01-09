@@ -8,7 +8,16 @@ const useStyles = makeStyles({
         'justify-content': 'center',
         'height': '60px',
         'align-items': 'center',
-
+        '& input[type="radio"]': {
+            display: 'none',
+        },
+        '& input[type="radio"] + img': {
+            cursor: 'pointer',
+        },
+        '& input[type="radio"]:checked + span': {
+            border: 'solid 5px #959595',
+            background: '#e6ebe7',
+        }
     },
     agePannel: {
         'display':'flex',
@@ -33,7 +42,6 @@ const useStyles = makeStyles({
     },
     ageLabel: {
         'color': '#333',
-        'font-family': 'Lato',
         'font-size': '10px',
         'font-weight': '700',
         'height': 'auto',
@@ -51,26 +59,30 @@ function AddAgePannel() {
 
     return (
         <div className={classes.pannel}>
-            <div className={classes.agePannel}>
-                <div className={classes.ageButton} >
+            <label className={classes.agePannel}>
+                <input type="radio" name="age" value="1"/>
+                <span className={classes.ageButton} >
                     <p className={classes.ageLabel}>10代</p>
-                </div>
-            </div>
-            <div className={classes.agePannel}>
-                <div className={classes.ageButton} >
+                </span>
+            </label>
+            <label className={classes.agePannel}>
+                <input type="radio" name="age" value="1"/>
+                <span className={classes.ageButton} >
                     <p className={classes.ageLabel}>20代</p>
-                </div>
-            </div>
-            <div className={classes.agePannel}>
-                <div className={classes.ageButton} >
+                </span>
+            </label>
+            <label className={classes.agePannel}>
+                <input type="radio" name="age" value="1"/>
+                <span className={classes.ageButton} >
                     <p className={classes.ageLabel}>30代</p>
-                </div>
-            </div>
-            <div className={classes.agePannel}>
-                <div className={classes.ageButton} >
+                </span>
+            </label>
+            <label className={classes.agePannel}>
+                <input type="radio" name="age" value="1"/>
+                <span className={classes.ageButton} >
                     <p className={classes.ageLabel}>40代</p>
-                </div>
-            </div>
+                </span>
+            </label>
         </div>
     );
 }
