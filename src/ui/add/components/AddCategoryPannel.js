@@ -9,7 +9,19 @@ const useStyles = makeStyles({
         'height': '100px',
         'align-items': 'center',
         'margin-top': '20px',
-
+        '& input[type="radio"]': {
+            display: 'none',
+        },
+        '& input[type="radio"] + img': {
+            cursor: 'pointer',
+        },
+        '& input[type="radio"] ~ p': {
+            color: 'red',
+        },
+        '& input[type="radio"]:checked + img': {
+            color: 'red',
+            outline: '2px solid #f00',
+        },
     },
     categoryPannel: {
         'display':'flex',
@@ -59,13 +71,19 @@ function AddCategoryPannel() {
  <div className={classes.pannel}>
      <div className={classes.categoryPannel}>
          <div className={classes.imagePannel} >
-             <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/72de7e7c-ac10-41ce-8e3b-e9054ae03635"/>
+             <label>
+                <input type="radio" name="test" value="1" checked/>
+                 <img className={classes.image} src="https://storage.googleapis.com/production-os-assets/assets/72de7e7c-ac10-41ce-8e3b-e9054ae03635"/>
+             </label>
          </div>
          <p className={classes.label}>ファッション</p>
      </div>
      <div className={classes.categoryPannel}>
          <div className={classes.imagePannel} >
-             <img className={classes.image} src="/content-cut.png"/>
+             <label>
+                 <input type="radio" name="test" value="2"/>
+                 <img className={classes.image} src="/content-cut.png"/>
+             </label>
          </div>
          <p className={classes.label}>ヘア</p>
      </div>
