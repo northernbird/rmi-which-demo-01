@@ -1,6 +1,6 @@
 import Box from "@material-ui/core/Box";
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useCallback } from "react";
+import React, {useCallback , useState } from "react";
 import ImageUpload from './ImageUpload'
 import { useDropzone } from "react-dropzone";
 
@@ -48,10 +48,28 @@ const useStyles = makeStyles({
 
 function ProfileImageUpload() {
     const classes = useStyles()
+    const [showPreview, setShowPreview] = useState(false)
+    const [previewImage, setPreviewImage] = useState()
     const onDrop = useCallback(acceptedFiles => {
-        // Do something with the files
+        acceptedFiles.forEach((file) => {
+            console.log("TEST")
+            console.log(file)
+
+            const reader = new FileReader()
+            reader.readAsDataURL(file);
+
+            reader.onload = function () {
+                //TODO: here change update as "imageLoaded" to show image preview
+                alert(reader.result)
+                setPreviewImage(reader.result)
+                setShowPreview(true)
+            };
+            reader.onerror = function (error) {
+                alert('Error: ', error);
+            };
+        })
     }, []);
-    const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({ onDrop });
+    const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({ onDrop })
 
     return (
         <div>
@@ -67,6 +85,9 @@ function ProfileImageUpload() {
                         <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像を追加</Box></Box>}
                 </div>
             </div>
+            {showPreview &&
+                    <img src={previewImage} />
+            }
         </div>
     );
 }
