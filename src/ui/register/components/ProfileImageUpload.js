@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import React, {useCallback , useState } from "react";
 import ImageUpload from './ImageUpload'
 import { useDropzone } from "react-dropzone";
+import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 
 const useStyles = makeStyles({
     pannel: {
@@ -43,7 +44,17 @@ const useStyles = makeStyles({
     },
     profile: {
         marginTop: '27px',
+    },
+    previewImage: {
+        alignContent: 'center',
+        alignItems: 'center',
+        background: '#EEEEEE',
+        borderRadius: '30%',
+        width: '110px',
+        height: '110px',
+        margin: 'auto',
     }
+
 });
 
 function ProfileImageUpload() {
@@ -52,9 +63,6 @@ function ProfileImageUpload() {
     const [previewImage, setPreviewImage] = useState()
     const onDrop = useCallback(acceptedFiles => {
         acceptedFiles.forEach((file) => {
-            console.log("TEST")
-            console.log(file)
-
             const reader = new FileReader()
             reader.readAsDataURL(file);
 
@@ -71,23 +79,30 @@ function ProfileImageUpload() {
     }, []);
     const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({ onDrop })
 
+    const renderContent = (showPreview, isDragActive) =>  {
+        if (showPreview) {
+            return (<img src={previewImage} className={classes.previewImage}/>)
+        } else {
+            return [(
+                isDragActive ? <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像をドロップ ...</Box> : <Box>
+                        <ImageUpload className={classes.profile}/>
+                        <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像を追加</Box>
+                    </Box>
+            )]
+        }
+    };
+
     return (
         <div>
             <div className={classes.line}/>
             <div className={classes.profileImage}>
                 <div {...getRootProps()}>
                     <input {...getInputProps()} />
-                    {isDragActive ? <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像をドロップ ...</Box> : <Box>
-                        <ImageUpload className={classes.profile}/>
-                        <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像を追加</Box>
-                    </Box>}
+                    {renderContent(showPreview, isDragActive, isDragReject)}
                     {isDragReject && <Box><ImageUpload className={classes.profile}/>
                         <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像を追加</Box></Box>}
                 </div>
             </div>
-            {showPreview &&
-                    <img src={previewImage} />
-            }
         </div>
     );
 }

@@ -1,15 +1,18 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, {useCallback} from 'react';
+import {makeStyles} from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import {useDropzone} from "react-dropzone";
+import Box from "@material-ui/core/Box";
+import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 
 const useStyles = makeStyles({
-    pannel: props=> ({
+    pannel: props => ({
         'display': 'flex',
         'flex-flow': 'row nowrap',
         'justify-content': 'space-around',
         'height': props.height,
     }),
-    photoPannel: props=> ({
+    photoPannel: props => ({
         'display': 'flex',
         'align-content': 'center',
         'align-items': 'center',
@@ -23,28 +26,60 @@ const useStyles = makeStyles({
         'width': '45%',
         'max-width': '45%',
     }),
-    foo: props => ({
-        backgroundColor: props.backgroundColor,
-    }),
+    addPhotoImage: {
+        'align-items': 'center',
+    }
 });
 
 function InputQuestionTextPannel() {
 
     const matches = useMediaQuery('(orientation: landscape)')
+    const onDrop = useCallback(acceptedFiles => {
+        console.log("AAA")
+    }, []);
+    const {getRootProps, getInputProps, isDragActive, isDragReject} = useDropzone({onDrop})
 
     let props;
-    if(matches) {
-        props = { height: '50%'};
+    if (matches) {
+        props = {height: '50%'};
     } else {
-        props = { height: '35%',};
+        props = {height: '35%',};
     }
     const classes = useStyles(props)
 
     return (
         <div className={classes.pannel}>
-            <div className={classes.photoPannel}>
+            <div {...getRootProps()} className={classes.photoPannel}>
+                <input {...getInputProps()} />
+                {isDragActive ?
+                    <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像をドロップ ...</Box> :
+                    <div>
+                        <Box display="flex" flexDirection="column" justifyContent="center" letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>
+                            <Box display="flex" justifyContent="center">
+                                <InsertDriveFileIcon color={'#686868'}/>
+                            </Box>
+                            <Box>
+                                画像を追加
+                            </Box>
+                        </Box>
+                    </div>
+                }
             </div>
             <div className={classes.photoPannel}>
+                <input {...getInputProps()} />
+                {isDragActive ?
+                    <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像をドロップ ...</Box> :
+                    <div>
+                        <Box display="flex" flexDirection="column" justifyContent="center" letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>
+                            <Box display="flex" justifyContent="center">
+                                <InsertDriveFileIcon color={'#686868'}/>
+                            </Box>
+                            <Box>
+                                画像を追加
+                            </Box>
+                        </Box>
+                    </div>
+                }
             </div>
         </div>
     );
