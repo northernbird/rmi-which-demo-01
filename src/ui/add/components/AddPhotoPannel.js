@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {useDropzone} from "react-dropzone";
@@ -29,14 +29,40 @@ const useStyles = makeStyles({
     }),
     addPhotoImage: {
         'align-items': 'center',
+    },
+    previewImage: {
+        alignContent: 'center',
+        alignItems: 'center',
+        background: '#EEEEEE',
+        width: '100%',
+        height: '100%',
+        margin: 'auto',
     }
 });
 
 function InputQuestionTextPannel() {
 
+    const [showPreview, setShowPreview] = useState(false)
+    const [previewImage, setPreviewImage] = useState()
     const matches = useMediaQuery('(orientation: landscape)')
     const onDrop = useCallback(acceptedFiles => {
         console.log("AAA")
+        acceptedFiles.forEach((file) => {
+            const reader = new FileReader()
+            reader.readAsDataURL(file);
+
+            reader.onload = function () {
+                //TODO: here change update as "imageLoaded" to show image preview
+                alert(reader.result)
+                setPreviewImage(reader.result)
+                setShowPreview(true)
+            };
+            reader.onerror = function (error) {
+                alert('Error: ', error);
+            };
+        })
+
+
     }, []);
     const {getRootProps, getInputProps, isDragActive, isDragReject} = useDropzone({onDrop})
 
@@ -49,19 +75,24 @@ function InputQuestionTextPannel() {
     const classes = useStyles(props)
 
     const renderContent = (isDragActive) =>  {
-        return [(
-            isDragActive ? <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像をドロップ ...</Box> :
-                <div>
-                    <Box display="flex" flexDirection="column" justifyContent="center" letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>
-                        <Box display="flex" justifyContent="center">
-                            <InsertDriveFileIcon color={'#686868'}/>
+
+        if (showPreview) {
+            return (<img src={previewImage} className={classes.previewImage}/>)
+        } else {
+            return [(
+                isDragActive ? <Box letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>画像をドロップ ...</Box> :
+                    <div>
+                        <Box display="flex" flexDirection="column" justifyContent="center" letterSpacing={'0.1em'} fontSize={12} fontWeight={700} color={'#686868'}>
+                            <Box display="flex" justifyContent="center">
+                                <InsertDriveFileIcon color={'#686868'}/>
+                            </Box>
+                            <Box>
+                                画像を追加
+                            </Box>
                         </Box>
-                        <Box>
-                            画像を追加
-                        </Box>
-                    </Box>
-                </div>
-        )]
+                    </div>
+            )]
+        }
     };
 
 
