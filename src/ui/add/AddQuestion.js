@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         'flex-flow': 'column nowrap',
         'margin': '20px 0px 10px 0px',
         'overflow-x': 'auto',
-        'overflow-y': 'hidden',
+        'overflow-y': 'scroll',
         //TODO  Why height doesn't work with percentage
         'height': props.height,
     })
@@ -24,7 +24,8 @@ const useStyles = makeStyles({
 
 function AddQuestion({history}) {
 
-    const matches = useMediaQuery('(orientation: landscape) and (min-height: 740px), (max-height: 570px)')
+    console.log("Hello World")
+    const matches = useMediaQuery('(orientation: landscape)')
 
     let props;
     if(matches) {
